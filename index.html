@@ -1,661 +1,1017 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HSN VISA CONSULTANT | Your Visa Counselor - Portfolio Demo</title>
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Google Fonts -->
+    <title>HSN Visa Consultant — Your Visa Counselor</title>
+    
+    <!-- Google Fonts & FontAwesome -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <!-- FontAwesome Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        brand: {
-                            crimson: '#8B1E22',
-                            wine: '#6B1216',
-                            darkWine: '#4A0B0E',
-                            cream: '#FDFBF7',
-                            softCream: '#F4EFE6',
-                            cardCream: '#FFFFFF',
-                            gold: '#C5A059',
-                            brightGold: '#D4AF37',
-                            darkText: '#1F1113',
-                            muted: '#665D5E'
-                        }
-                    },
-                    fontFamily: {
-                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
-                        serif: ['Cinzel', 'serif']
-                    }
-                }
-            }
-        }
-    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
     <style>
-        .glass-nav {
-            background-color: rgba(253, 251, 247, 0.95);
-            backdrop-filter: blur(12px);
+        :root {
+            --primary-maroon: #7A0016;
+            --primary-maroon-hover: #5c0010;
+            --dark-burgundy: #4A000D;
+            --accent-gold: #D4AF37;
+            --bg-cream: #FAF8F5;
+            --bg-light-gray: #F4F5F7;
+            --text-dark: #1E293B;
+            --text-muted: #64748B;
+            --border-color: #E2E8F0;
+            --white: #FFFFFF;
+            --shadow-sm: 0 2px 4px rgba(0,0,0,0.05);
+            --shadow-md: 0 10px 25px rgba(122,0,22,0.08);
+            --shadow-lg: 0 20px 35px rgba(0,0,0,0.12);
+            --radius-sm: 8px;
+            --radius-md: 14px;
+            --radius-lg: 20px;
+            --transition: all 0.3s cubic-bezier(0.25,0.8,0.25,1);
         }
-        .logo-shadow {
-            box-shadow: 0 4px 15px rgba(139, 30, 34, 0.2);
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--text-dark);
+            background-color: var(--white);
+            line-height: 1.6;
+            overflow-x: hidden;
         }
-        .hero-pattern {
-            background-color: #8B1E22;
-            background-image: radial-gradient(rgba(212, 175, 55, 0.15) 1px, transparent 1px);
-            background-size: 24px 24px;
+        a { text-decoration: none; color: inherit; transition: var(--transition); }
+        ul { list-style: none; }
+        .container { max-width: 1280px; margin: 0 auto; padding: 0 24px; }
+
+        /* SECTION HEADINGS */
+        .section-header { text-align: center; max-width: 720px; margin: 0 auto 50px; }
+        .sub-tag {
+            display: inline-block;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: var(--primary-maroon);
+            background: rgba(122,0,22,0.08);
+            padding: 6px 16px;
+            border-radius: 30px;
+            letter-spacing: 1.5px;
+            margin-bottom: 12px;
+        }
+        .section-title {
+            font-size: 2.25rem;
+            font-weight: 700;
+            color: var(--dark-burgundy);
+            line-height: 1.25;
+            margin-bottom: 15px;
+        }
+        .section-desc { color: var(--text-muted); font-size: 1rem; }
+
+        /* ==================== TOP BAR (FINAL UPDATED) ==================== */
+        .top-bar {
+            background-color: var(--dark-burgundy);
+            color: var(--white);
+            font-size: 0.85rem;
+            padding: 11px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .top-bar .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+        .top-info {
+            display: flex;
+            align-items: center;
+            gap: 28px;
+            flex-wrap: wrap;
+        }
+        .top-info-link,
+        .top-info-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--white);
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 0.3px;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        .top-info-link:hover { color: var(--accent-gold); }
+        .top-info-link:hover i { color: var(--accent-gold); }
+        .top-info i {
+            color: var(--white);
+            font-size: 0.9rem;
+            transition: var(--transition);
+        }
+        .top-info-item { cursor: default; }
+        .top-info-item:hover i { color: var(--white); }
+
+        .top-social {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .top-social a {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
+            color: var(--white);
+            transition: var(--transition);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+        }
+        .top-social a:hover {
+            background: var(--primary-maroon);
+            color: var(--white);
+            transform: translateY(-2px);
+            border-color: var(--primary-maroon);
+        }
+
+        /* HEADER */
+        .main-header {
+            background-color: var(--white);
+            position: sticky; top: 0; z-index: 1000;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+        }
+        .navbar { display: flex; align-items: center; justify-content: space-between; padding: 16px 0; }
+
+        /* LOGO */
+        .brand-logo { display: flex; align-items: center; gap: 12px; cursor: pointer; }
+        .logo-icon-wrap {
+            width: 52px; height: 52px; border-radius: 50%;
+            background: radial-gradient(circle, var(--white) 60%, #f3f0ec 100%);
+            border: 2px solid var(--primary-maroon);
+            display: flex; align-items: center; justify-content: center;
+            box-shadow: 0 3px 8px rgba(122,0,22,0.2);
+        }
+        .logo-icon-wrap i { font-size: 1.5rem; color: var(--primary-maroon); }
+        .logo-text { display: flex; flex-direction: column; }
+        .logo-title { font-size: 1.3rem; font-weight: 800; color: var(--text-dark); line-height: 1.1; }
+        .logo-title span { color: var(--primary-maroon); }
+        .logo-subtitle { font-size: 0.72rem; font-weight: 600; color: var(--primary-maroon); letter-spacing: 1.5px; text-transform: uppercase; }
+
+        /* NAV */
+        .nav-menu { display: flex; align-items: center; gap: 8px; }
+        .nav-link {
+            padding: 10px 16px; font-size: 0.95rem; font-weight: 600;
+            color: var(--text-dark); border-radius: var(--radius-sm);
+            position: relative; display: flex; align-items: center; gap: 6px;
+        }
+        .nav-link:hover, .nav-link.active { color: var(--primary-maroon); background-color: var(--bg-cream); }
+        .nav-link.active::after {
+            content: ''; position: absolute; bottom: 4px; left: 16px; right: 16px;
+            height: 3px; background-color: var(--primary-maroon); border-radius: 2px;
+        }
+
+        /* DROPDOWN */
+        .dropdown { position: relative; }
+        .dropdown-menu {
+            position: absolute; top: 100%; left: 0; width: 240px;
+            background: var(--white); box-shadow: var(--shadow-md);
+            border-radius: var(--radius-sm); padding: 10px 0;
+            opacity: 0; visibility: hidden; transform: translateY(12px);
+            transition: var(--transition); border-top: 3px solid var(--primary-maroon);
+        }
+        .dropdown:hover .dropdown-menu { opacity: 1; visibility: visible; transform: translateY(0); }
+        .dropdown-item {
+            padding: 10px 20px; font-size: 0.9rem; font-weight: 500;
+            color: var(--text-dark); display: flex; align-items: center; gap: 10px;
+        }
+        .dropdown-item:hover { background-color: var(--bg-cream); color: var(--primary-maroon); padding-left: 24px; }
+        .dropdown-item i { font-size: 0.8rem; color: var(--primary-maroon); }
+
+        /* HEADER CTA */
+        .btn-header-cta {
+            background: linear-gradient(135deg, var(--primary-maroon) 0%, var(--dark-burgundy) 100%);
+            color: var(--white) !important; padding: 10px 22px; border-radius: var(--radius-sm);
+            font-weight: 600; font-size: 0.9rem; box-shadow: 0 4px 12px rgba(122,0,22,0.25);
+            display: flex; align-items: center; gap: 8px; border: none; cursor: pointer;
+        }
+        .btn-header-cta:hover { transform: translateY(-2px); box-shadow: 0 6px 18px rgba(122,0,22,0.35); }
+
+        /* MOBILE TOGGLE */
+        .mobile-toggle { display: none; font-size: 1.5rem; color: var(--dark-burgundy); cursor: pointer; }
+
+        /* HERO */
+        .hero {
+            position: relative;
+            background: linear-gradient(135deg, rgba(74,0,13,0.92) 0%, rgba(122,0,22,0.85) 100%),
+                        url('https://images.unsplash.com/photo-1436491865332-7a61a109cc05?q=80&w=1600&auto=format&fit=crop') center/cover no-repeat;
+            color: var(--white); padding: 100px 0 120px; overflow: hidden;
+        }
+        .hero::after {
+            content: ''; position: absolute; bottom: -2px; left: 0;
+            width: 100%; height: 50px; background: var(--white);
+            clip-path: polygon(0 100%, 100% 100%, 100% 0);
+        }
+        .hero-grid { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 50px; align-items: center; }
+        .hero-badge {
+            display: inline-flex; align-items: center; gap: 8px;
+            background: rgba(255,255,255,0.15); backdrop-filter: blur(10px);
+            padding: 8px 18px; border-radius: 30px; border: 1px solid rgba(255,255,255,0.2);
+            font-size: 0.85rem; font-weight: 500; margin-bottom: 20px;
+        }
+        .hero-badge i { color: var(--accent-gold); }
+        .hero-title { font-size: 3.2rem; font-weight: 800; line-height: 1.15; margin-bottom: 20px; }
+        .hero-title span { color: var(--accent-gold); }
+        .hero-subtitle { font-size: 1.1rem; color: rgba(255,255,255,0.88); margin-bottom: 35px; max-width: 600px; font-weight: 300; }
+        .hero-actions { display: flex; gap: 16px; flex-wrap: wrap; }
+
+        .btn-primary {
+            background-color: var(--primary-maroon); color: var(--white);
+            padding: 14px 32px; border-radius: var(--radius-sm);
+            font-weight: 600; font-size: 1rem; border: 2px solid var(--primary-maroon);
+            cursor: pointer; display: inline-flex; align-items: center; gap: 10px;
+            transition: var(--transition); box-shadow: var(--shadow-sm);
+        }
+        .btn-primary:hover { background-color: var(--primary-maroon-hover); border-color: var(--primary-maroon-hover); transform: translateY(-3px); }
+
+        .btn-outline-light {
+            background: rgba(255,255,255,0.1); color: var(--white);
+            padding: 14px 32px; border-radius: var(--radius-sm);
+            font-weight: 600; font-size: 1rem; border: 2px solid rgba(255,255,255,0.4);
+            cursor: pointer; display: inline-flex; align-items: center; gap: 10px;
+            backdrop-filter: blur(5px); transition: var(--transition);
+        }
+        .btn-outline-light:hover { background: var(--white); color: var(--dark-burgundy); border-color: var(--white); transform: translateY(-3px); }
+
+        /* HERO CARD */
+        .hero-card {
+            background: rgba(255,255,255,0.95); backdrop-filter: blur(15px);
+            border-radius: var(--radius-md); padding: 35px; color: var(--text-dark);
+            box-shadow: 0 25px 50px rgba(0,0,0,0.25); border: 1px solid rgba(255,255,255,0.3);
+        }
+        .hero-card-header { border-bottom: 1px solid var(--border-color); padding-bottom: 15px; margin-bottom: 20px; }
+        .hero-card-title { font-size: 1.25rem; font-weight: 700; color: var(--dark-burgundy); }
+        .hero-stats-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+        .stat-item {
+            text-align: center; padding: 15px; background: var(--bg-cream);
+            border-radius: var(--radius-sm); border: 1px solid rgba(122,0,22,0.1);
+        }
+        .stat-number { font-size: 2rem; font-weight: 800; color: var(--primary-maroon); line-height: 1; margin-bottom: 5px; }
+        .stat-label { font-size: 0.8rem; color: var(--text-muted); font-weight: 500; }
+        .hero-trust-badge {
+            margin-top: 20px; display: flex; align-items: center; gap: 12px;
+            background: #FFF8EA; padding: 12px 16px; border-radius: var(--radius-sm);
+            border-left: 4px solid var(--accent-gold);
+        }
+        .hero-trust-badge i { font-size: 1.5rem; color: var(--accent-gold); }
+        .hero-trust-text { font-size: 0.82rem; color: #7A5200; font-weight: 600; }
+
+        /* NON IMMIGRANT */
+        .non-immigrant-section { padding: 80px 0; background-color: var(--bg-cream); }
+        .cards-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(270px, 1fr)); gap: 30px; }
+
+        .visa-card {
+            background-color: var(--white); border-radius: var(--radius-md);
+            padding: 35px 25px; box-shadow: var(--shadow-sm);
+            border: 1px solid var(--border-color); transition: var(--transition);
+            position: relative; overflow: hidden;
+            display: flex; flex-direction: column; justify-content: space-between;
+        }
+        .visa-card::before {
+            content: ''; position: absolute; top: 0; left: 0;
+            width: 100%; height: 4px;
+            background: linear-gradient(90deg, var(--primary-maroon), var(--accent-gold));
+            opacity: 0; transition: var(--transition);
+        }
+        .visa-card:hover { transform: translateY(-8px); box-shadow: var(--shadow-md); border-color: rgba(122,0,22,0.2); }
+        .visa-card:hover::before { opacity: 1; }
+        .visa-icon-box {
+            width: 65px; height: 65px; border-radius: 12px; background: var(--bg-cream);
+            color: var(--primary-maroon); display: flex; align-items: center; justify-content: center;
+            font-size: 1.8rem; margin-bottom: 24px; transition: var(--transition);
+            border: 1px solid rgba(122,0,22,0.1);
+        }
+        .visa-card:hover .visa-icon-box { background-color: var(--primary-maroon); color: var(--white); transform: scale(1.05); }
+        .visa-title { font-size: 1.25rem; font-weight: 700; color: var(--dark-burgundy); margin-bottom: 12px; }
+        .visa-description { font-size: 0.9rem; color: var(--text-muted); margin-bottom: 24px; line-height: 1.6; }
+        .visa-features-list { margin-bottom: 24px; }
+        .visa-features-list li { font-size: 0.85rem; color: var(--text-dark); margin-bottom: 8px; display: flex; align-items: center; gap: 8px; }
+        .visa-features-list i { color: var(--primary-maroon); font-size: 0.75rem; }
+        .btn-card-link {
+            display: inline-flex; align-items: center; justify-content: space-between;
+            width: 100%; padding: 12px 18px; border-radius: var(--radius-sm);
+            background-color: var(--bg-cream); color: var(--primary-maroon);
+            font-weight: 600; font-size: 0.9rem; transition: var(--transition);
+        }
+        .visa-card:hover .btn-card-link { background-color: var(--primary-maroon); color: var(--white); }
+        .btn-card-link i { transition: transform 0.3s ease; }
+        .visa-card:hover .btn-card-link i { transform: translateX(5px); }
+
+        /* APPOINTMENT SECTION */
+        .appointment-section { padding: 90px 0; background-color: var(--white); }
+        .appointment-wrapper {
+            background: linear-gradient(135deg, var(--dark-burgundy) 0%, var(--primary-maroon) 100%);
+            border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-lg);
+            display: grid; grid-template-columns: 0.9fr 1.1fr; color: var(--white);
+        }
+        .appointment-info {
+            padding: 60px 45px;
+            background: url('https://images.unsplash.com/photo-1521791136064-7986c2920216?q=80&w=1000&auto=format&fit=crop') center/cover;
+            position: relative; display: flex; flex-direction: column; justify-content: space-between;
+        }
+        .appointment-info::before {
+            content: ''; position: absolute; inset: 0;
+            background: linear-gradient(135deg, rgba(74,0,13,0.95) 0%, rgba(122,0,22,0.88) 100%);
+        }
+        .appointment-info-content { position: relative; z-index: 2; }
+        .appointment-info h3 { font-size: 2rem; font-weight: 700; margin-bottom: 15px; color: var(--white); }
+        .appointment-info p { color: rgba(255,255,255,0.85); margin-bottom: 30px; font-size: 0.95rem; }
+        .contact-bullets { display: flex; flex-direction: column; gap: 20px; position: relative; z-index: 2; }
+        .bullet-item { display: flex; align-items: flex-start; gap: 15px; }
+        .bullet-icon {
+            width: 42px; height: 42px; border-radius: 50%;
+            background: rgba(255,255,255,0.12); display: flex;
+            align-items: center; justify-content: center; color: var(--accent-gold);
+            font-size: 1.1rem; flex-shrink: 0;
+        }
+        .bullet-text h5 { font-size: 0.95rem; font-weight: 600; color: var(--white); }
+        .bullet-text p { font-size: 0.85rem; color: rgba(255,255,255,0.75); margin-bottom: 0; }
+
+        .appointment-form-container { background-color: var(--white); padding: 60px 45px; color: var(--text-dark); }
+        .form-title { font-size: 1.5rem; font-weight: 700; color: var(--dark-burgundy); margin-bottom: 24px; }
+        .appointment-form { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+        .form-group { display: flex; flex-direction: column; gap: 6px; }
+        .form-group.full-width { grid-column: span 2; }
+        .form-label { font-size: 0.85rem; font-weight: 600; color: var(--text-dark); }
+        .form-control {
+            width: 100%; padding: 12px 16px; border: 1px solid var(--border-color);
+            border-radius: var(--radius-sm); font-family: inherit; font-size: 0.9rem;
+            color: var(--text-dark); background-color: var(--bg-cream);
+            transition: var(--transition); outline: none;
+        }
+        .form-control:focus { border-color: var(--primary-maroon); background-color: var(--white); box-shadow: 0 0 0 3px rgba(122,0,22,0.1); }
+        select.form-control { cursor: pointer; }
+        textarea.form-control { resize: vertical; min-height: 90px; }
+
+        /* unified action row */
+        .form-action-row {
+            grid-column: span 2;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 18px;
+            margin-top: 6px;
+        }
+        .btn-submit {
+            flex: 1 1 200px;
+            background: linear-gradient(135deg, var(--primary-maroon) 0%, var(--dark-burgundy) 100%);
+            color: var(--white); border: none; padding: 15px 20px;
+            border-radius: var(--radius-sm); font-weight: 700; font-size: 1rem;
+            cursor: pointer; transition: var(--transition);
+            box-shadow: 0 4px 12px rgba(122,0,22,0.25);
+            display: flex; align-items: center; justify-content: center; gap: 10px;
+        }
+        .btn-submit:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(122,0,22,0.35); }
+
+        .btn-whatsapp-action {
+            flex: 1 1 200px;
+            background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+            color: var(--white); border: none; padding: 15px 20px;
+            border-radius: var(--radius-sm); font-weight: 700; font-size: 1rem;
+            cursor: pointer; transition: var(--transition);
+            box-shadow: 0 4px 12px rgba(37,211,102,0.3);
+            display: flex; align-items: center; justify-content: center; gap: 10px;
+            text-decoration: none;
+        }
+        .btn-whatsapp-action:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(37,211,102,0.45);
+            color: var(--white);
+        }
+
+        .form-success-msg {
+            display: none;
+            grid-column: span 2;
+            padding: 15px;
+            background-color: #DEF7EC;
+            color: #03543F;
+            border-radius: var(--radius-sm);
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-align: center;
+        }
+
+        /* WHY US */
+        .why-us-section { padding: 80px 0; background-color: var(--bg-light-gray); }
+        .why-us-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 25px; }
+        .why-card {
+            background: var(--white); padding: 30px 24px; border-radius: var(--radius-md);
+            box-shadow: var(--shadow-sm); transition: var(--transition);
+            border-bottom: 3px solid transparent;
+        }
+        .why-card:hover { border-bottom-color: var(--primary-maroon); transform: translateY(-5px); box-shadow: var(--shadow-md); }
+        .why-icon { font-size: 2rem; color: var(--primary-maroon); margin-bottom: 16px; }
+        .why-title { font-size: 1.15rem; font-weight: 700; color: var(--dark-burgundy); margin-bottom: 10px; }
+        .why-desc { font-size: 0.88rem; color: var(--text-muted); }
+
+        /* FOOTER */
+        .main-footer {
+            background-color: var(--dark-burgundy);
+            color: rgba(255,255,255,0.8);
+            padding: 70px 0 20px; font-size: 0.9rem;
+        }
+        .footer-grid { display: grid; grid-template-columns: 1.5fr 1fr 1fr 1.2fr; gap: 40px; margin-bottom: 50px; }
+        .footer-logo-text { color: var(--white); font-size: 1.3rem; font-weight: 800; margin-bottom: 15px; }
+        .footer-desc { font-size: 0.88rem; margin-bottom: 20px; line-height: 1.6; }
+        .footer-heading { color: var(--white); font-size: 1.1rem; font-weight: 700; margin-bottom: 20px; position: relative; padding-bottom: 10px; }
+        .footer-heading::after {
+            content: ''; position: absolute; bottom: 0; left: 0;
+            width: 35px; height: 3px; background: var(--accent-gold); border-radius: 2px;
+        }
+        .footer-links { display: flex; flex-direction: column; gap: 12px; }
+        .footer-links a { color: rgba(255,255,255,0.75); transition: var(--transition); display: flex; align-items: center; gap: 8px; }
+        .footer-links a:hover { color: var(--accent-gold); padding-left: 5px; }
+        .footer-contact-item { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 14px; }
+        .footer-contact-item i { color: var(--accent-gold); margin-top: 4px; }
+        .copyright-bar { border-top: 1px solid rgba(255,255,255,0.1); padding-top: 20px; text-align: center; font-size: 0.82rem; color: rgba(255,255,255,0.6); }
+
+        /* RESPONSIVE */
+        @media (max-width: 992px) {
+            .hero-grid { grid-template-columns: 1fr; text-align: center; }
+            .hero-actions { justify-content: center; }
+            .hero-subtitle { margin-left: auto; margin-right: auto; }
+            .appointment-wrapper { grid-template-columns: 1fr; }
+            .footer-grid { grid-template-columns: 1fr 1fr; }
+            .nav-menu {
+                position: fixed; top: 80px; left: -100%; width: 100%;
+                height: calc(100vh - 80px); background-color: var(--white);
+                flex-direction: column; padding: 30px; gap: 15px;
+                transition: 0.4s ease; box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            }
+            .nav-menu.active { left: 0; }
+            .mobile-toggle { display: block; }
+        }
+
+        @media (max-width: 600px) {
+            .top-bar { display: none; }
+            .hero-title { font-size: 2.2rem; }
+            .appointment-form { grid-template-columns: 1fr; }
+            .form-group.full-width { grid-column: span 1; }
+            .form-action-row { grid-column: span 1; flex-direction: column; }
+            .btn-submit, .btn-whatsapp-action { width: 100%; }
+            .footer-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
-<body class="bg-brand-cream text-brand-darkText font-sans antialiased selection:bg-brand-crimson selection:text-white">
+<body>
 
-    <!-- TOP NOTIFICATION / CONTRAST BAR -->
-    <div class="bg-brand-darkWine text-white text-xs py-2 px-4 border-b border-brand-gold/30">
-        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
-            <div class="flex items-center gap-3">
-                <span class="bg-brand-gold text-brand-darkWine font-extrabold text-[10px] px-2 py-0.5 rounded tracking-widest uppercase">Specialized</span>
-                <span class="text-brand-softCream font-medium"><i class="fa-solid fa-passport text-brand-gold mr-1.5"></i> 100% Focused Exclusively on Permanent Residency & Immigrant Visas</span>
+    <!-- ==================== TOP BAR (FIXED) ==================== -->
+    <div class="top-bar">
+        <div class="container">
+            <div class="top-info">
+                <a href="tel:+923074374689" class="top-info-link">
+                    <i class="fa-solid fa-phone"></i>
+                    <span>+92 307 4374689</span>
+                </a>
+                <a href="mailto:hsnvisaconsultant@gmail.com" class="top-info-link">
+                    <i class="fa-solid fa-envelope"></i>
+                    <span>hsnvisaconsultant@gmail.com</span>
+                </a>
+                <div class="top-info-item">
+                    <i class="fa-solid fa-clock"></i>
+                    <span>Mon - Sat: 9:00 AM - 7:00 PM</span>
+                </div>
             </div>
-            <div class="flex items-center gap-6 font-semibold text-brand-softCream">
-                <span><i class="fa-solid fa-phone text-brand-gold mr-1"></i> +92 300 1234567</span>
-                <span class="hidden md:inline"><i class="fa-solid fa-envelope text-brand-gold mr-1"></i> info@hsnvisaconsultant.com</span>
+            <div class="top-social">
+                <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                <a href="https://wa.me/923074374689" target="_blank" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
             </div>
         </div>
     </div>
 
-    <!-- MAIN NAVIGATION HEADER -->
-    <header class="sticky top-0 z-40 glass-nav border-b border-brand-crimson/10 shadow-sm">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex items-center justify-between h-24">
-                
-                <!-- BRAND LOGO (ECHOES LOGO DESIGN) -->
-                <a href="#home" class="flex items-center gap-3.5 group">
-                    <div class="w-14 h-14 rounded-full bg-brand-cream border-2 border-brand-crimson logo-shadow flex items-center justify-center p-1.5 transition-transform group-hover:scale-105">
-                        <svg viewBox="0 0 100 100" class="w-full h-full text-brand-crimson">
-                            <circle cx="50" cy="50" r="46" fill="none" stroke="#8B1E22" stroke-width="2.5"/>
-                            <path d="M 20 50 A 30 30 0 1 1 80 50" fill="none" stroke="#8B1E22" stroke-width="3.5" stroke-dasharray="75 8"/>
-                            <circle cx="50" cy="50" r="22" fill="#8B1E22" opacity="0.12"/>
-                            <circle cx="50" cy="50" r="22" fill="none" stroke="#8B1E22" stroke-width="2.5"/>
-                            <path d="M 28 50 L 72 50 M 50 28 L 50 72 M 34 38 Q 50 50 34 62 M 66 38 Q 50 50 66 62" fill="none" stroke="#8B1E22" stroke-width="1.8"/>
-                            <path d="M 72 25 L 82 20 L 78 28 L 84 34 L 80 35 L 75 30 L 70 33 Z" fill="#8B1E22"/>
-                            <path d="M 72 45 L 84 49 L 72 53 L 60 49 Z M 80 50.5 L 80 57" fill="#1F1113" stroke="#1F1113" stroke-width="1"/>
-                        </svg>
+    <!-- HEADER -->
+    <header class="main-header">
+        <div class="container">
+            <nav class="navbar">
+                <div class="brand-logo" onclick="window.location.href='#'">
+                    <div class="logo-icon-wrap">
+                        <i class="fa-solid fa-globe"></i>
                     </div>
-                    <div>
-                        <div class="text-xl sm:text-2xl font-extrabold font-serif text-brand-crimson tracking-tight leading-none">
-                            HSN VISA <span class="text-brand-darkText font-sans font-bold">CONSULTANT</span>
-                        </div>
-                        <div class="text-[10px] sm:text-[11px] font-bold text-brand-darkText tracking-widest uppercase mt-1 flex items-center gap-1.5">
-                            <i class="fa-solid fa-plane-departure text-brand-crimson text-[9px]"></i>
-                            <span>YOUR VISA COUNSELOR</span>
-                            <i class="fa-solid fa-plane-arrival text-brand-crimson text-[9px]"></i>
-                        </div>
+                    <div class="logo-text">
+                        <div class="logo-title">HSN <span>VISA</span></div>
+                        <div class="logo-subtitle">CONSULTANT</div>
                     </div>
-                </a>
-
-                <!-- DESKTOP NAV LINKS -->
-                <nav class="hidden lg:flex items-center gap-8 text-sm font-bold tracking-wide">
-                    <a href="#home" class="text-brand-crimson border-b-2 border-brand-crimson pb-1">Home</a>
-                    <a href="#about" class="text-brand-darkText hover:text-brand-crimson transition-colors">About Us</a>
-                    <a href="#services" class="text-brand-darkText hover:text-brand-crimson transition-colors">Immigration Pathways</a>
-                    <a href="#why-us" class="text-brand-darkText hover:text-brand-crimson transition-colors">Why Choose Us</a>
-                    <a href="#process" class="text-brand-darkText hover:text-brand-crimson transition-colors">Process</a>
-                    <a href="#contact" class="text-brand-darkText hover:text-brand-crimson transition-colors">Contact</a>
-                </nav>
-
-                <!-- HEADER CTA -->
-                <div class="flex items-center gap-3">
-                    <a href="#contact" class="hidden sm:inline-flex items-center gap-2 bg-brand-crimson hover:bg-brand-wine text-white font-bold px-5 py-2.5 rounded-xl text-xs sm:text-sm shadow-md transition-all hover:-translate-y-0.5">
-                        <i class="fa-solid fa-clipboard-check text-brand-brightGold"></i>
-                        Get Assessment
-                    </a>
-                    <button onclick="toggleMobileMenu()" class="lg:hidden text-brand-crimson p-2 rounded-lg hover:bg-brand-softCream">
-                        <i class="fa-solid fa-bars text-2xl"></i>
-                    </button>
                 </div>
-            </div>
-        </div>
 
-        <!-- MOBILE MENU OVERLAY -->
-        <div id="mobile-menu" class="hidden lg:hidden bg-brand-cream border-t border-brand-crimson/20 px-6 py-5 space-y-3 shadow-xl">
-            <a href="#home" onclick="toggleMobileMenu()" class="block py-2 text-brand-crimson font-bold">Home</a>
-            <a href="#about" onclick="toggleMobileMenu()" class="block py-2 text-brand-darkText font-bold">About Us</a>
-            <a href="#services" onclick="toggleMobileMenu()" class="block py-2 text-brand-darkText font-bold">Immigration Pathways</a>
-            <a href="#why-us" onclick="toggleMobileMenu()" class="block py-2 text-brand-darkText font-bold">Why Choose Us</a>
-            <a href="#process" onclick="toggleMobileMenu()" class="block py-2 text-brand-darkText font-bold">4-Step Process</a>
-            <a href="#contact" onclick="toggleMobileMenu()" class="block py-2 text-brand-darkText font-bold">Contact Counselor</a>
-            <a href="#contact" onclick="toggleMobileMenu()" class="w-full mt-3 inline-block text-center bg-brand-crimson text-white font-bold py-3 rounded-xl shadow">Get Assessment</a>
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="#" class="nav-link active">Home</a></li>
+                    <li><a href="#about" class="nav-link">About Us</a></li>
+                    <li class="dropdown">
+                        <a href="#non-immigrant" class="nav-link">
+                            Non-Immigrant Visa <i class="fa-solid fa-chevron-down" style="font-size: 0.7rem;"></i>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#non-immigrant" class="dropdown-item"><i class="fa-solid fa-graduation-cap"></i> Student Visa</a></li>
+                            <li><a href="#non-immigrant" class="dropdown-item"><i class="fa-solid fa-plane-departure"></i> Tourist / Visit Visa</a></li>
+                            <li><a href="#non-immigrant" class="dropdown-item"><i class="fa-solid fa-briefcase"></i> Business Visa</a></li>
+                            <li><a href="#non-immigrant" class="dropdown-item"><i class="fa-solid fa-users"></i> Family / Dependent</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#immigrant" class="nav-link">Immigrant Visa</a></li>
+                    <li><a href="#assessment" class="nav-link">Free Assessment</a></li>
+                    <li><a href="#contact" class="nav-link">Contact Us</a></li>
+                </ul>
+
+                <div style="display: flex; align-items: center; gap: 15px;">
+                    <a href="#appointment" class="btn-header-cta">
+                        <i class="fa-solid fa-calendar-check"></i> Book Appointment
+                    </a>
+                    <div class="mobile-toggle" id="mobileToggle">
+                        <i class="fa-solid fa-bars"></i>
+                    </div>
+                </div>
+            </nav>
         </div>
     </header>
 
-    <main>
-        <!-- 1. HERO SECTION -->
-        <section id="home" class="relative hero-pattern text-white py-20 lg:py-28 overflow-hidden border-b-4 border-brand-gold">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-                    
-                    <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
-                        <div class="inline-flex items-center gap-2 bg-black/20 backdrop-blur-md px-4 py-2 rounded-full text-brand-brightGold text-xs font-bold uppercase tracking-wider border border-white/15">
-                            <i class="fa-solid fa-shield-halved"></i> Certified & Specialized Immigrant Advisory
-                        </div>
-                        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold font-serif leading-tight">
-                            Your Trusted Partner For <span class="text-brand-brightGold">Permanent Residency</span> & Global Migration
-                        </h1>
-                        <p class="text-brand-softCream text-base sm:text-lg font-light leading-relaxed max-w-2xl">
-                            At <strong class="font-semibold text-white">HSN VISA CONSULTANT</strong>, we don't process temporary visit visas. We focus 100% of our expert legal counselor resources on permanent immigrant cases, skilled migration points programs, and family PR reunification.
-                        </p>
+    <!-- HERO -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-grid">
+                <div>
+                    <div class="hero-badge">
+                        <i class="fa-solid fa-award"></i> Registered Visa & Immigration Experts
+                    </div>
+                    <h1 class="hero-title">Your Visa Counselor for <span>Global Success</span></h1>
+                    <p class="hero-subtitle">
+                        Expert guidance for Student, Visit, Business, and Permanent Residency Visas. Navigating complex immigration processes smoothly for UK, USA, Canada, Australia & Europe.
+                    </p>
+                    <div class="hero-actions">
+                        <a href="#appointment" class="btn-primary">
+                            <i class="fa-solid fa-calendar-plus"></i> Book Free Consultation
+                        </a>
+                        <a href="#non-immigrant" class="btn-outline-light">
+                            Explore Visas <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
 
-                        <div class="flex flex-col sm:flex-row gap-4 pt-4 justify-center lg:justify-start">
-                            <a href="#contact" class="inline-flex items-center justify-center gap-3 bg-brand-brightGold hover:bg-brand-gold text-brand-darkWine font-extrabold px-8 py-4 rounded-xl text-base shadow-xl transition-all transform hover:-translate-y-1">
-                                <span>Book PR Profile Audit</span>
-                                <i class="fa-solid fa-arrow-right"></i>
-                            </a>
-                            <a href="#services" class="inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 text-white font-bold px-7 py-4 rounded-xl text-base backdrop-blur border border-white/25 transition-all">
-                                <i class="fa-solid fa-compass text-brand-brightGold"></i>
-                                <span>Explore PR Pathways</span>
-                            </a>
+                <div class="hero-card">
+                    <div class="hero-card-header">
+                        <div class="hero-card-title">Why Applicants Choose HSN</div>
+                    </div>
+                    <div class="hero-stats-grid">
+                        <div class="stat-item">
+                            <div class="stat-number">98.5%</div>
+                            <div class="stat-label">Visa Approval Rate</div>
                         </div>
-
-                        <!-- STATS COUNTER -->
-                        <div class="pt-8 grid grid-cols-3 gap-4 sm:gap-6 border-t border-white/15">
-                            <div>
-                                <div class="text-2xl sm:text-3xl font-extrabold font-serif text-brand-brightGold">98%</div>
-                                <div class="text-xs text-brand-softCream mt-1 font-medium">PR Approval Track</div>
-                            </div>
-                            <div>
-                                <div class="text-2xl sm:text-3xl font-extrabold font-serif text-brand-brightGold">10+</div>
-                                <div class="text-xs text-brand-softCream mt-1 font-medium">Target Destinations</div>
-                            </div>
-                            <div>
-                                <div class="text-2xl sm:text-3xl font-extrabold font-serif text-brand-brightGold">12+ Yrs</div>
-                                <div class="text-xs text-brand-softCream mt-1 font-medium">Counseling Expertise</div>
-                            </div>
+                        <div class="stat-item">
+                            <div class="stat-number">5+</div>
+                            <div class="stat-label">Years Experience</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">1,000+</div>
+                            <div class="stat-label">Happy Clients</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">25+</div>
+                            <div class="stat-label">Countries Covered</div>
                         </div>
                     </div>
-
-                    <!-- HERO VISUAL / EMBLEM CARD -->
-                    <div class="lg:col-span-5">
-                        <div class="bg-brand-cream text-brand-darkText rounded-3xl p-8 shadow-2xl border-2 border-brand-brightGold/40 relative text-center">
-                            <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-brand-brightGold text-brand-darkWine font-extrabold text-xs uppercase px-5 py-1.5 rounded-full shadow-lg border border-white">
-                                Exclusive Immigrant Advisory
-                            </div>
-
-                            <div class="w-28 h-28 rounded-full bg-brand-cream border-4 border-brand-crimson logo-shadow mx-auto mt-2 mb-4 flex items-center justify-center p-3">
-                                <svg viewBox="0 0 100 100" class="w-full h-full text-brand-crimson">
-                                    <circle cx="50" cy="50" r="46" fill="none" stroke="#8B1E22" stroke-width="2.5"/>
-                                    <path d="M 20 50 A 30 30 0 1 1 80 50" fill="none" stroke="#8B1E22" stroke-width="3.5" stroke-dasharray="75 8"/>
-                                    <circle cx="50" cy="50" r="22" fill="#8B1E22" opacity="0.12"/>
-                                    <circle cx="50" cy="50" r="22" fill="none" stroke="#8B1E22" stroke-width="2.5"/>
-                                    <path d="M 28 50 L 72 50 M 50 28 L 50 72 M 34 38 Q 50 50 34 62 M 66 38 Q 50 50 66 62" fill="none" stroke="#8B1E22" stroke-width="1.8"/>
-                                    <path d="M 72 25 L 82 20 L 78 28 L 84 34 L 80 35 L 75 30 L 70 33 Z" fill="#8B1E22"/>
-                                    <path d="M 72 45 L 84 49 L 72 53 L 60 49 Z M 80 50.5 L 80 57" fill="#1F1113" stroke="#1F1113" stroke-width="1"/>
-                                </svg>
-                            </div>
-
-                            <h3 class="text-2xl font-extrabold font-serif text-brand-crimson">HSN VISA CONSULTANT</h3>
-                            <p class="text-xs font-bold text-brand-darkText tracking-widest uppercase mt-1">YOUR VISA COUNSELOR</p>
-
-                            <div class="mt-6 space-y-3 text-left text-xs font-semibold text-brand-muted bg-brand-softCream p-4 rounded-xl border border-brand-crimson/10">
-                                <div class="flex items-center gap-2.5">
-                                    <i class="fa-solid fa-circle-check text-brand-crimson"></i>
-                                    <span>Skilled Migration & CRS Point Optimization</span>
-                                </div>
-                                <div class="flex items-center gap-2.5">
-                                    <i class="fa-solid fa-circle-check text-brand-crimson"></i>
-                                    <span>Spousal & Family PR Reunification Filing</span>
-                                </div>
-                                <div class="flex items-center gap-2.5">
-                                    <i class="fa-solid fa-circle-check text-brand-crimson"></i>
-                                    <span>Business Investment & Golden Residency</span>
-                                </div>
-                                <div class="flex items-center gap-2.5">
-                                    <i class="fa-solid fa-circle-check text-brand-crimson"></i>
-                                    <span>Procedural Fairness & Appeals Support</span>
-                                </div>
-                            </div>
-
-                            <a href="#contact" class="mt-6 w-full inline-block bg-brand-crimson hover:bg-brand-wine text-white font-bold py-3.5 rounded-xl text-sm shadow transition-colors">
-                                Free Qualification Check
-                            </a>
+                    <div class="hero-trust-badge">
+                        <i class="fa-solid fa-shield-halved"></i>
+                        <div class="hero-trust-text">
+                            100% Transparent Process & Certified Senior Immigration Consultants
                         </div>
                     </div>
-
                 </div>
             </div>
-        </section>
-
-        <!-- 2. ABOUT US SECTION -->
-        <section id="about" class="py-20 bg-brand-cream border-b border-brand-crimson/10">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-                    
-                    <div class="lg:col-span-6 space-y-6">
-                        <span class="bg-brand-crimson/10 text-brand-crimson font-extrabold text-xs uppercase tracking-widest px-3.5 py-1.5 rounded-full">About HSN Visa Advisory</span>
-                        <h2 class="text-3xl sm:text-4xl font-extrabold font-serif text-brand-crimson leading-tight">
-                            Dedicated Counselor Guidance For Your Long-Term Global Success
-                        </h2>
-                        <p class="text-brand-muted text-sm leading-relaxed">
-                            <strong>HSN VISA CONSULTANT (YOUR VISA COUNSELOR)</strong> was established with a singular mission: providing honest, transparent, and legally sound immigration guidance for families and professionals seeking permanent migration.
-                        </p>
-                        <p class="text-brand-muted text-sm leading-relaxed">
-                            Unlike generic agencies processing short-term permits, we specialize exclusively in permanent residency routes. Every document, employment reference, and point credential is vetted to ensure 100% compliance with government immigration laws.
-                        </p>
-
-                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
-                            <div class="p-4 bg-brand-softCream rounded-2xl border border-brand-crimson/15">
-                                <div class="w-10 h-10 rounded-xl bg-brand-crimson text-brand-brightGold flex items-center justify-center text-lg font-bold mb-2">
-                                    <i class="fa-solid fa-scale-balanced"></i>
-                                </div>
-                                <h4 class="font-bold text-brand-crimson text-sm">Ethical Counseling</h4>
-                                <p class="text-xs text-brand-muted mt-1">Zero misrepresentation, transparent evaluation, and honest feedback on your score.</p>
-                            </div>
-                            <div class="p-4 bg-brand-softCream rounded-2xl border border-brand-crimson/15">
-                                <div class="w-10 h-10 rounded-xl bg-brand-crimson text-brand-brightGold flex items-center justify-center text-lg font-bold mb-2">
-                                    <i class="fa-solid fa-user-shield"></i>
-                                </div>
-                                <h4 class="font-bold text-brand-crimson text-sm">Personal Counselor</h4>
-                                <p class="text-xs text-brand-muted mt-1">Direct single-point contact throughout your entire permanent residency journey.</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="lg:col-span-6">
-                        <div class="bg-brand-cardCream p-8 rounded-3xl border border-brand-crimson/20 shadow-xl space-y-6">
-                            <h3 class="text-2xl font-bold font-serif text-brand-crimson border-b pb-4 border-slate-200">Our Core Migration Commitments</h3>
-                            
-                            <div class="flex items-start gap-4">
-                                <div class="w-10 h-10 rounded-full bg-brand-crimson/10 text-brand-crimson flex items-center justify-center text-lg font-bold shrink-0">1</div>
-                                <div>
-                                    <h4 class="font-bold text-brand-darkText text-base">Comprehensive CRS & Points Audit</h4>
-                                    <p class="text-xs text-brand-muted mt-1">Detailed evaluation of age, education, ECA credentials, and language test requirements before filing.</p>
-                                </div>
-                            </div>
-
-                            <div class="flex items-start gap-4">
-                                <div class="w-10 h-10 rounded-full bg-brand-crimson/10 text-brand-crimson flex items-center justify-center text-lg font-bold shrink-0">2</div>
-                                <div>
-                                    <h4 class="font-bold text-brand-darkText text-base">State & Provincial Nomination Strategy</h4>
-                                    <p class="text-xs text-brand-muted mt-1">Matching your occupation code (NOC/ANZSCO) with active in-demand provincial streams (PNP / Subclass 190).</p>
-                                </div>
-                            </div>
-
-                            <div class="flex items-start gap-4">
-                                <div class="w-10 h-10 rounded-full bg-brand-crimson/10 text-brand-crimson flex items-center justify-center text-lg font-bold shrink-0">3</div>
-                                <div>
-                                    <h4 class="font-bold text-brand-darkText text-base">Complete Post-PR Landing Guidance</h4>
-                                    <p class="text-xs text-brand-muted mt-1">Assistance with initial PR card delivery, SIN/TFN registration, and settlement advice.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </section>
-
-        <!-- 3. IMMIGRATION PATHWAYS (SERVICES) -->
-        <section id="services" class="py-20 bg-brand-softCream/60 border-b border-brand-crimson/10">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center max-w-3xl mx-auto mb-16">
-                    <span class="bg-brand-crimson/10 text-brand-crimson text-xs font-bold uppercase tracking-widest px-3.5 py-1.5 rounded-full">Focused Immigrant Pathways</span>
-                    <h2 class="text-3xl sm:text-4xl font-extrabold font-serif text-brand-crimson mt-3">Permanent Residency Services</h2>
-                    <p class="text-brand-muted text-base mt-2">Specialized visa pathways designed to establish permanent legal residence worldwide.</p>
-                </div>
-
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                    
-                    <!-- SERVICE CARD 1 -->
-                    <div class="bg-brand-cardCream p-8 rounded-3xl border border-brand-crimson/15 shadow-md hover:shadow-2xl transition-all group hover:-translate-y-1.5">
-                        <div class="w-14 h-14 bg-brand-crimson text-brand-brightGold rounded-2xl flex items-center justify-center text-2xl mb-6 shadow-md group-hover:scale-110 transition-transform">
-                            <i class="fa-solid fa-graduation-cap"></i>
-                        </div>
-                        <h3 class="text-xl font-bold font-serif text-brand-crimson mb-3">Skilled PR Migration</h3>
-                        <p class="text-brand-muted text-xs leading-relaxed mb-6">Canada Express Entry (FSW/CEC), Provincial Nominations (PNP), and Australia Subclass 189/190 GSM streams.</p>
-                        <ul class="space-y-2 text-[11px] font-semibold text-brand-darkText mb-6">
-                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-crimson"></i> Points Grid Optimization</li>
-                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-crimson"></i> ECA & Skills Assessment</li>
-                        </ul>
-                        <a href="#contact" class="text-brand-crimson font-extrabold text-xs flex items-center gap-1 hover:text-brand-wine">Book Skill Audit &rarr;</a>
-                    </div>
-
-                    <!-- SERVICE CARD 2 -->
-                    <div class="bg-brand-cardCream p-8 rounded-3xl border border-brand-crimson/15 shadow-md hover:shadow-2xl transition-all group hover:-translate-y-1.5">
-                        <div class="w-14 h-14 bg-brand-crimson text-brand-brightGold rounded-2xl flex items-center justify-center text-2xl mb-6 shadow-md group-hover:scale-110 transition-transform">
-                            <i class="fa-solid fa-house-chimney-user"></i>
-                        </div>
-                        <h3 class="text-xl font-bold font-serif text-brand-crimson mb-3">Spousal & Family PR</h3>
-                        <p class="text-brand-muted text-xs leading-relaxed mb-6">Permanent sponsorship applications for spouses, common-law partners, and dependent children with proof curation.</p>
-                        <ul class="space-y-2 text-[11px] font-semibold text-brand-darkText mb-6">
-                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-crimson"></i> Sponsor Eligibility Check</li>
-                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-crimson"></i> Genuine Relationship Proof</li>
-                        </ul>
-                        <a href="#contact" class="text-brand-crimson font-extrabold text-xs flex items-center gap-1 hover:text-brand-wine">Sponsorship Inquiry &rarr;</a>
-                    </div>
-
-                    <!-- SERVICE CARD 3 -->
-                    <div class="bg-brand-cardCream p-8 rounded-3xl border border-brand-crimson/15 shadow-md hover:shadow-2xl transition-all group hover:-translate-y-1.5">
-                        <div class="w-14 h-14 bg-brand-crimson text-brand-brightGold rounded-2xl flex items-center justify-center text-2xl mb-6 shadow-md group-hover:scale-110 transition-transform">
-                            <i class="fa-solid fa-briefcase"></i>
-                        </div>
-                        <h3 class="text-xl font-bold font-serif text-brand-crimson mb-3">Business & Investor PR</h3>
-                        <p class="text-brand-muted text-xs leading-relaxed mb-6">Residency-by-investment, Start-up Visas, and Entrepreneur pathways for high-net-worth individuals.</p>
-                        <ul class="space-y-2 text-[11px] font-semibold text-brand-darkText mb-6">
-                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-crimson"></i> UK / EU Investor Routes</li>
-                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-crimson"></i> Net Worth Verification</li>
-                        </ul>
-                        <a href="#contact" class="text-brand-crimson font-extrabold text-xs flex items-center gap-1 hover:text-brand-wine">Investor Options &rarr;</a>
-                    </div>
-
-                    <!-- SERVICE CARD 4 -->
-                    <div class="bg-brand-cardCream p-8 rounded-3xl border border-brand-crimson/15 shadow-md hover:shadow-2xl transition-all group hover:-translate-y-1.5">
-                        <div class="w-14 h-14 bg-brand-crimson text-brand-brightGold rounded-2xl flex items-center justify-center text-2xl mb-6 shadow-md group-hover:scale-110 transition-transform">
-                            <i class="fa-solid fa-scale-balanced"></i>
-                        </div>
-                        <h3 class="text-xl font-bold font-serif text-brand-crimson mb-3">Appeals & PFL Responses</h3>
-                        <p class="text-brand-muted text-xs leading-relaxed mb-6">Expert counselor response to Procedural Fairness Letters (PFL), visa refusals, and PR card renewals.</p>
-                        <ul class="space-y-2 text-[11px] font-semibold text-brand-darkText mb-6">
-                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-crimson"></i> Legal Case Review</li>
-                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-crimson"></i> Statutory Submissions</li>
-                        </ul>
-                        <a href="#contact" class="text-brand-crimson font-extrabold text-xs flex items-center gap-1 hover:text-brand-wine">Legal Assistance &rarr;</a>
-                    </div>
-
-                </div>
-            </div>
-        </section>
-
-        <!-- 4. WHY CHOOSE US -->
-        <section id="why-us" class="py-20 bg-brand-cream border-b border-brand-crimson/10">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center max-w-3xl mx-auto mb-16">
-                    <span class="bg-brand-crimson/10 text-brand-crimson text-xs font-bold uppercase tracking-widest px-3.5 py-1.5 rounded-full">The Counselor Difference</span>
-                    <h2 class="text-3xl sm:text-4xl font-extrabold font-serif text-brand-crimson mt-3">Why Choose HSN Visa Consultant?</h2>
-                    <p class="text-brand-muted text-base">Comparing general visa agents against our specialized immigrant advisory practice.</p>
-                </div>
-
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    
-                    <div class="bg-brand-cardCream p-8 rounded-3xl border-2 border-brand-gold/40 shadow-lg relative">
-                        <div class="w-12 h-12 bg-brand-crimson text-brand-brightGold rounded-xl flex items-center justify-center text-xl mb-4">
-                            <i class="fa-solid fa-bullseye"></i>
-                        </div>
-                        <h3 class="text-xl font-bold font-serif text-brand-crimson mb-2">100% Immigrant Specialization</h3>
-                        <p class="text-xs text-brand-muted leading-relaxed">Unlike agencies processing short-term visit visas, our complete focus is on permanent residency, points systems, and long-term settlement.</p>
-                    </div>
-
-                    <div class="bg-brand-cardCream p-8 rounded-3xl border-2 border-brand-gold/40 shadow-lg relative">
-                        <div class="w-12 h-12 bg-brand-crimson text-brand-brightGold rounded-xl flex items-center justify-center text-xl mb-4">
-                            <i class="fa-solid fa-magnifying-glass-chart"></i>
-                        </div>
-                        <h3 class="text-xl font-bold font-serif text-brand-crimson mb-2">Strict Eligibility Screening</h3>
-                        <p class="text-xs text-brand-muted leading-relaxed">We only take on cases with realistic paths to approval. If your CRS or points grid is low, we advise you on concrete score-enhancement steps.</p>
-                    </div>
-
-                    <div class="bg-brand-cardCream p-8 rounded-3xl border-2 border-brand-gold/40 shadow-lg relative">
-                        <div class="w-12 h-12 bg-brand-crimson text-brand-brightGold rounded-xl flex items-center justify-center text-xl mb-4">
-                            <i class="fa-solid fa-file-contract"></i>
-                        </div>
-                        <h3 class="text-xl font-bold font-serif text-brand-crimson mb-2">Meticulous Documentation</h3>
-                        <p class="text-xs text-brand-muted leading-relaxed">Every employment reference, job description match, and police clearance is reviewed under exact legal standards to eliminate refusal risks.</p>
-                    </div>
-
-                </div>
-            </div>
-        </section>
-
-        <!-- 5. SIMPLE 4-STEP PROCESS -->
-        <section id="process" class="py-20 bg-brand-softCream/40 border-b border-brand-crimson/10">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center max-w-3xl mx-auto mb-16">
-                    <span class="bg-brand-crimson/10 text-brand-crimson text-xs font-bold uppercase tracking-widest px-3.5 py-1.5 rounded-full">Streamlined Journey</span>
-                    <h2 class="text-3xl sm:text-4xl font-extrabold font-serif text-brand-crimson mt-3">4 Steps To Your PR Visa Grant</h2>
-                    <p class="text-brand-muted text-base">A transparent, structured counselor workflow ensuring legal accuracy.</p>
-                </div>
-
-                <div class="grid grid-cols-1 md:grid-cols-4 gap-6 text-center">
-                    
-                    <div class="bg-brand-cardCream p-6 rounded-2xl border border-brand-crimson/15 shadow-sm">
-                        <div class="w-12 h-12 bg-brand-crimson text-brand-brightGold font-extrabold text-xl rounded-full flex items-center justify-center mx-auto mb-4 shadow">1</div>
-                        <h4 class="font-bold text-brand-crimson text-base mb-2">Initial Consultation</h4>
-                        <p class="text-xs text-brand-muted leading-relaxed">In-depth discussion of your age, qualification, language score, and target destination.</p>
-                    </div>
-
-                    <div class="bg-brand-cardCream p-6 rounded-2xl border border-brand-crimson/15 shadow-sm">
-                        <div class="w-12 h-12 bg-brand-crimson text-brand-brightGold font-extrabold text-xl rounded-full flex items-center justify-center mx-auto mb-4 shadow">2</div>
-                        <h4 class="font-bold text-brand-crimson text-base mb-2">Points Evaluation</h4>
-                        <p class="text-xs text-brand-muted leading-relaxed">Exact CRS / Points calculation and Educational Credential Assessment (ECA) dispatch.</p>
-                    </div>
-
-                    <div class="bg-brand-cardCream p-6 rounded-2xl border border-brand-crimson/15 shadow-sm">
-                        <div class="w-12 h-12 bg-brand-crimson text-brand-brightGold font-extrabold text-xl rounded-full flex items-center justify-center mx-auto mb-4 shadow">3</div>
-                        <h4 class="font-bold text-brand-crimson text-base mb-2">Document Curation</h4>
-                        <p class="text-xs text-brand-muted leading-relaxed">Assembling job duties letters, police certificates, medicals, and financial proof.</p>
-                    </div>
-
-                    <div class="bg-brand-cardCream p-6 rounded-2xl border border-brand-crimson/15 shadow-sm">
-                        <div class="w-12 h-12 bg-emerald-700 text-white font-extrabold text-xl rounded-full flex items-center justify-center mx-auto mb-4 shadow">4</div>
-                        <h4 class="font-bold text-brand-crimson text-base mb-2">Lodgement & PR Grant</h4>
-                        <p class="text-xs text-brand-muted leading-relaxed">Formal EOI submission, Invitation to Apply (ITA) response, and COPR issuance.</p>
-                    </div>
-
-                </div>
-            </div>
-        </section>
-
-        <!-- 6. CONTACT & EVALUATION FORM -->
-        <section id="contact" class="py-20 bg-brand-cream">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
-                    
-                    <!-- LEFT COLUMN: CONTACT DETAILS -->
-                    <div class="lg:col-span-5 space-y-6">
-                        <span class="bg-brand-crimson/10 text-brand-crimson font-extrabold text-xs uppercase tracking-widest px-3.5 py-1.5 rounded-full">Direct Communication</span>
-                        <h2 class="text-3xl font-extrabold font-serif text-brand-crimson">Consult With Your Visa Counselor</h2>
-                        <p class="text-brand-muted text-sm leading-relaxed">Ready to begin your permanent residency case? Contact us directly or submit your information for an eligibility review.</p>
-
-                        <div class="space-y-4 pt-2">
-                            <div class="flex items-start gap-4 p-4 bg-brand-cardCream rounded-2xl border border-brand-crimson/15 shadow-sm">
-                                <div class="w-10 h-10 rounded-full bg-brand-crimson text-brand-brightGold flex items-center justify-center text-lg flex-shrink-0">
-                                    <i class="fa-solid fa-location-dot"></i>
-                                </div>
-                                <div>
-                                    <h4 class="font-bold text-brand-crimson text-sm">Principal Office</h4>
-                                    <p class="text-xs text-brand-muted mt-1">Suite 402, Executive Heights, Main Boulevard, Gulberg III, Lahore, Pakistan</p>
-                                </div>
-                            </div>
-
-                            <div class="flex items-start gap-4 p-4 bg-brand-cardCream rounded-2xl border border-brand-crimson/15 shadow-sm">
-                                <div class="w-10 h-10 rounded-full bg-brand-crimson text-brand-brightGold flex items-center justify-center text-lg flex-shrink-0">
-                                    <i class="fa-solid fa-phone"></i>
-                                </div>
-                                <div>
-                                    <h4 class="font-bold text-brand-crimson text-sm">Direct Phone & WhatsApp</h4>
-                                    <p class="text-xs text-brand-muted mt-1">+92 (300) 123-4567 | +92 (42) 3578-9000</p>
-                                </div>
-                            </div>
-
-                            <div class="flex items-start gap-4 p-4 bg-brand-cardCream rounded-2xl border border-brand-crimson/15 shadow-sm">
-                                <div class="w-10 h-10 rounded-full bg-brand-crimson text-brand-brightGold flex items-center justify-center text-lg flex-shrink-0">
-                                    <i class="fa-solid fa-envelope"></i>
-                                </div>
-                                <div>
-                                    <h4 class="font-bold text-brand-crimson text-sm">Inquiry Email</h4>
-                                    <p class="text-xs text-brand-muted mt-1">info@hsnvisaconsultant.com</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- QUICK WHATSAPP DEMO BUTTON -->
-                        <div class="pt-2">
-                            <button onclick="simulatedWhatsApp()" class="w-full bg-emerald-700 hover:bg-emerald-800 text-white font-bold py-3.5 rounded-xl text-sm shadow flex items-center justify-center gap-2">
-                                <i class="fa-brands fa-whatsapp text-xl"></i>
-                                Quick WhatsApp Inquiry
-                            </button>
-                        </div>
-                    </div>
-
-                    <!-- RIGHT COLUMN: DEMO FORM -->
-                    <div class="lg:col-span-7 bg-brand-cardCream p-8 sm:p-10 rounded-3xl border-2 border-brand-crimson/15 shadow-xl">
-                        <h3 class="text-2xl font-bold font-serif text-brand-crimson mb-1">Book PR Profile Assessment</h3>
-                        <p class="text-xs text-brand-muted mb-6">Fill in your information for a personalized evaluation by HSN Visa Counselor.</p>
-
-                        <form onsubmit="handleDemoSubmit(event)" class="space-y-4">
-                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                                <div>
-                                    <label class="block text-xs font-bold uppercase mb-1 text-brand-darkText">Full Name *</label>
-                                    <input type="text" id="form-name" required placeholder="e.g. Muhammad Hassan" class="w-full p-3 rounded-xl border border-slate-300 text-sm focus:ring-2 focus:ring-brand-crimson focus:outline-none">
-                                </div>
-                                <div>
-                                    <label class="block text-xs font-bold uppercase mb-1 text-brand-darkText">Phone / WhatsApp *</label>
-                                    <input type="tel" id="form-phone" required placeholder="+92 300 1234567" class="w-full p-3 rounded-xl border border-slate-300 text-sm focus:ring-2 focus:ring-brand-crimson focus:outline-none">
-                                </div>
-                            </div>
-
-                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                                <div>
-                                    <label class="block text-xs font-bold uppercase mb-1 text-brand-darkText">Target Country *</label>
-                                    <select id="form-country" required class="w-full p-3 rounded-xl border border-slate-300 text-sm focus:ring-2 focus:ring-brand-crimson focus:outline-none bg-white">
-                                        <option value="Canada PR">Canada Permanent Residence</option>
-                                        <option value="Australia PR">Australia General Skilled</option>
-                                        <option value="UK Migration">UK Skilled Migration</option>
-                                        <option value="Europe PR">Europe Investment / PR</option>
-                                    </select>
-                                </div>
-                                <div>
-                                    <label class="block text-xs font-bold uppercase mb-1 text-brand-darkText">Visa Category *</label>
-                                    <select id="form-category" required class="w-full p-3 rounded-xl border border-slate-300 text-sm focus:ring-2 focus:ring-brand-crimson focus:outline-none bg-white">
-                                        <option value="Skilled Worker PR">Skilled Worker PR</option>
-                                        <option value="Spousal / Family PR">Spousal / Family PR</option>
-                                        <option value="Business Investor">Business / Investor Visa</option>
-                                        <option value="Legal Appeal / PFL">Appeal / PFL Response</option>
-                                    </select>
-                                </div>
-                            </div>
-
-                            <div>
-                                <label class="block text-xs font-bold uppercase mb-1 text-brand-darkText">Highest Qualification & Experience</label>
-                                <textarea id="form-message" rows="3" placeholder="Mention your degree (e.g. Master's in IT), work experience years, and English test status..." class="w-full p-3 rounded-xl border border-slate-300 text-sm focus:ring-2 focus:ring-brand-crimson focus:outline-none"></textarea>
-                            </div>
-
-                            <button type="submit" class="w-full bg-brand-crimson hover:bg-brand-wine text-white font-bold py-4 rounded-xl text-sm shadow-md transition-all flex items-center justify-center gap-2">
-                                <i class="fa-solid fa-paper-plane text-brand-brightGold"></i>
-                                Submit Profile To Counselor
-                            </button>
-                        </form>
-                    </div>
-
-                </div>
-            </div>
-        </section>
-
-    </main>
-
-    <!-- DEMO MODAL NOTIFICATION -->
-    <div id="demo-modal" class="fixed inset-0 z-50 hidden bg-brand-darkWine/80 backdrop-blur-sm flex items-center justify-center p-4">
-        <div class="bg-brand-cream rounded-3xl max-w-md w-full p-8 border-2 border-brand-brightGold shadow-2xl text-center relative">
-            <div class="w-16 h-16 bg-brand-crimson text-brand-brightGold rounded-full flex items-center justify-center text-3xl mx-auto mb-4 shadow-lg">
-                <i class="fa-solid fa-circle-check"></i>
-            </div>
-            <h3 class="text-2xl font-bold font-serif text-brand-crimson">Assessment Dispatched!</h3>
-            <p class="text-xs text-brand-muted mt-2 leading-relaxed" id="modal-desc">
-                Thank you. Your immigration profile details have been submitted to HSN Visa Counselor.
-            </p>
-            <button onclick="closeModal()" class="mt-6 w-full bg-brand-crimson text-white font-bold py-3 rounded-xl text-xs uppercase tracking-wider shadow">
-                Close Preview
-            </button>
         </div>
-    </div>
+    </section>
 
-    <!-- 7. FOOTER -->
-    <footer class="bg-brand-darkWine text-white border-t-4 border-brand-brightGold pt-16 pb-8">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 pb-12 border-b border-white/10">
-                
-                <div class="lg:col-span-5 space-y-4">
-                    <div class="flex items-center gap-3">
-                        <div class="w-10 h-10 rounded-full bg-brand-cream border border-brand-crimson flex items-center justify-center p-1">
-                            <svg viewBox="0 0 100 100" class="w-full h-full text-brand-crimson">
-                                <circle cx="50" cy="50" r="46" fill="none" stroke="#8B1E22" stroke-width="2.5"/>
-                                <circle cx="50" cy="50" r="22" fill="none" stroke="#8B1E22" stroke-width="2.5"/>
-                                <path d="M 28 50 L 72 50 M 50 28 L 50 72" stroke="#8B1E22" stroke-width="1.8"/>
-                                <path d="M 72 25 L 82 20 L 78 28 L 84 34 L 80 35 L 75 30 L 70 33 Z" fill="#8B1E22"/>
-                            </svg>
-                        </div>
-                        <div>
-                            <div class="text-lg font-bold font-serif text-brand-brightGold leading-none">HSN VISA CONSULTANT</div>
-                            <div class="text-[10px] font-bold text-brand-softCream tracking-wider mt-0.5">YOUR VISA COUNSELOR</div>
-                        </div>
-                    </div>
-                    <p class="text-xs text-brand-softCream leading-relaxed max-w-sm">
-                        Dedicated consultancy focusing exclusively on immigrant cases: Permanent Residency, Skilled Workers, Spousal Reunification, and Investor pathways.
-                    </p>
-                </div>
-
-                <div class="lg:col-span-3 space-y-3">
-                    <h4 class="text-sm font-bold font-serif text-brand-brightGold uppercase tracking-wider">Quick Navigation</h4>
-                    <ul class="space-y-2 text-xs font-medium text-brand-softCream">
-                        <li><a href="#home" class="hover:text-brand-brightGold">Home</a></li>
-                        <li><a href="#about" class="hover:text-brand-brightGold">About Counselor</a></li>
-                        <li><a href="#services" class="hover:text-brand-brightGold">Immigration Pathways</a></li>
-                        <li><a href="#process" class="hover:text-brand-brightGold">4-Step Process</a></li>
-                    </ul>
-                </div>
-
-                <div class="lg:col-span-4 space-y-3">
-                    <h4 class="text-sm font-bold font-serif text-brand-brightGold uppercase tracking-wider">Legal Disclaimer</h4>
-                    <p class="text-[11px] text-brand-softCream leading-relaxed">
-                        HSN Visa Consultant provides professional advisory and application preparation for permanent migration. Final decisions rest solely with respective government authorities.
-                    </p>
-                </div>
-
+    <!-- NON IMMIGRANT -->
+    <section class="non-immigrant-section" id="non-immigrant">
+        <div class="container">
+            <div class="section-header">
+                <span class="sub-tag">Visa Categories</span>
+                <h2 class="section-title">Non-Immigrant Visa Services</h2>
+                <p class="section-desc">Tailored visa filing solutions designed for temporary stays, high education, global visits, and business expansion.</p>
             </div>
 
-            <div class="pt-8 flex flex-col sm:flex-row justify-between items-center text-xs text-brand-softCream gap-4">
-                <p>&copy; 2026 HSN VISA CONSULTANT - YOUR VISA COUNSELOR. All rights reserved.</p>
-                <div class="flex items-center gap-4 text-sm text-brand-brightGold">
-                    <a href="#home" class="hover:text-white"><i class="fa-brands fa-facebook"></i></a>
-                    <a href="#home" class="hover:text-white"><i class="fa-brands fa-instagram"></i></a>
-                    <a href="#home" class="hover:text-white"><i class="fa-brands fa-linkedin"></i></a>
+            <div class="cards-grid">
+                <div class="visa-card">
+                    <div>
+                        <div class="visa-icon-box"><i class="fa-solid fa-graduation-cap"></i></div>
+                        <h3 class="visa-title">Student Visa</h3>
+                        <p class="visa-description">Unlock world-class education opportunities in top global universities with complete admission & visa support.</p>
+                        <ul class="visa-features-list">
+                            <li><i class="fa-solid fa-circle-check"></i> University Admission Guidance</li>
+                            <li><i class="fa-solid fa-circle-check"></i> SOP & Statement Assistance</li>
+                            <li><i class="fa-solid fa-circle-check"></i> Financial File Preparation</li>
+                        </ul>
+                    </div>
+                    <a href="#appointment" class="btn-card-link">
+                        <span>Apply Student Visa</span>
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
                 </div>
+
+                <div class="visa-card">
+                    <div>
+                        <div class="visa-icon-box"><i class="fa-solid fa-plane"></i></div>
+                        <h3 class="visa-title">Tourist / Visit Visa</h3>
+                        <p class="visa-description">Explore your dream destinations smoothly with hassle-free tourist visa documentation and appointment booking.</p>
+                        <ul class="visa-features-list">
+                            <li><i class="fa-solid fa-circle-check"></i> Comprehensive Travel Itinerary</li>
+                            <li><i class="fa-solid fa-circle-check"></i> Hotel & Flight Booking Covers</li>
+                            <li><i class="fa-solid fa-circle-check"></i> Strong Cover Letter Drafting</li>
+                        </ul>
+                    </div>
+                    <a href="#appointment" class="btn-card-link">
+                        <span>Apply Visit Visa</span>
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+
+                <div class="visa-card">
+                    <div>
+                        <div class="visa-icon-box"><i class="fa-solid fa-briefcase"></i></div>
+                        <h3 class="visa-title">Business & Work Visa</h3>
+                        <p class="visa-description">Expand your business boundaries or secure temporary work authorizations worldwide through seamless processing.</p>
+                        <ul class="visa-features-list">
+                            <li><i class="fa-solid fa-circle-check"></i> Corporate Invitation Vetting</li>
+                            <li><i class="fa-solid fa-circle-check"></i> Commercial Profile Setup</li>
+                            <li><i class="fa-solid fa-circle-check"></i> Fast-Track Embassy Filing</li>
+                        </ul>
+                    </div>
+                    <a href="#appointment" class="btn-card-link">
+                        <span>Apply Business Visa</span>
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+
+                <div class="visa-card">
+                    <div>
+                        <div class="visa-icon-box"><i class="fa-solid fa-users"></i></div>
+                        <h3 class="visa-title">Family & Dependent Visa</h3>
+                        <p class="visa-description">Reunite with your spouse, children, or immediate family members abroad with reliable sponsorship filing.</p>
+                        <ul class="visa-features-list">
+                            <li><i class="fa-solid fa-circle-check"></i> Relationship Proof Drafting</li>
+                            <li><i class="fa-solid fa-circle-check"></i> Sponsor Financial Verification</li>
+                            <li><i class="fa-solid fa-circle-check"></i> Embassy Interview Coaching</li>
+                        </ul>
+                    </div>
+                    <a href="#appointment" class="btn-card-link">
+                        <span>Apply Family Visa</span>
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- APPOINTMENT SECTION -->
+    <section class="appointment-section" id="appointment">
+        <div class="container">
+            <div class="appointment-wrapper">
+                <div class="appointment-info">
+                    <div class="appointment-info-content">
+                        <span class="sub-tag" style="background: rgba(255,255,255,0.15); color: var(--accent-gold);">
+                            Direct Consultation
+                        </span>
+                        <h3>Book An Appointment For Visa</h3>
+                        <p>Schedule a 1-on-1 session with our expert counselors to discuss your profile, eligibility, and step-by-step visa strategy.</p>
+                    </div>
+
+                    <div class="contact-bullets">
+                        <div class="bullet-item">
+                            <div class="bullet-icon"><i class="fa-solid fa-location-dot"></i></div>
+                            <div class="bullet-text">
+                                <h5>Head Office</h5>
+                                <p>Office No. F-207, 2nd Floor, Queens Plaza, opposite Queen Mary College, Muhammad Nagar Garhi Shahu, Lahore, 54000</p>
+                            </div>
+                        </div>
+                        <div class="bullet-item">
+                            <div class="bullet-icon"><i class="fa-solid fa-headset"></i></div>
+                            <div class="bullet-text">
+                                <h5>Support Helpline</h5>
+                                <p>+92 307 4374689 / hsnvisaconsultant@gmail.com</p>
+                            </div>
+                        </div>
+                        <div class="bullet-item">
+                            <div class="bullet-icon"><i class="fa-solid fa-user-tie"></i></div>
+                            <div class="bullet-text">
+                                <h5>Expert Counseling</h5>
+                                <p> Our Team is everytime avalaible to contact you and guide about your doubts.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="appointment-form-container">
+                    <h4 class="form-title">Fill Appointment Request</h4>
+
+                    <form class="appointment-form" id="appointmentForm" method="POST">
+                        <div class="form-group">
+                            <label class="form-label">Full Name *</label>
+                            <input type="text" class="form-control" id="fullName" placeholder="e.g. Muhammad Ali" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Phone / WhatsApp *</label>
+                            <input type="tel" class="form-control" id="phone" placeholder="+92 300 0000000" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Email Address *</label>
+                            <input type="email" class="form-control" id="email" placeholder="name@domain.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Visa Category *</label>
+                            <select class="form-control" id="visaCategory" required>
+                                <option value="" disabled selected>Select Category</option>
+                                <option>Non-Immigrant: Student Visa</option>
+                                <option>Non-Immigrant: Tourist / Visit</option>
+                                <option>Non-Immigrant: Business Visa</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Preferred Country *</label>
+                            <select class="form-control" id="preferredCountry" required>
+                                <option value="" disabled selected>Select Destination</option>
+                                <option>United Kingdom (UK)</option>
+                                <option>United States (USA)</option>
+                                <option>Canada</option>
+                                <option>Australia</option>
+                                <option>Schengen Area / Europe</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Preferred Date *</label>
+                            <input type="date" class="form-control" id="preferredDate" required>
+                        </div>
+                        <div class="form-group full-width">
+                            <label class="form-label">Message / Profile Summary</label>
+                            <textarea class="form-control" id="message" placeholder="Briefly explain your education, work background, or travel plans..."></textarea>
+                        </div>
+
+                        <div class="form-success-msg" id="successMsg">
+                            <i class="fa-solid fa-circle-check"></i> Thank you! Your appointment request has been submitted. Our counselor will contact you shortly.
+                        </div>
+
+                        <div class="form-action-row">
+                            <button type="submit" class="btn-submit" id="submitBtn">
+                                <i class="fa-solid fa-paper-plane"></i> Submit & Save
+                            </button>
+                            <a href="#" target="_blank" class="btn-whatsapp-action" id="whatsappBtn">
+                                <i class="fa-brands fa-whatsapp"></i> Send via WhatsApp
+                            </a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- WHY US -->
+    <section class="why-us-section" id="about">
+        <div class="container">
+            <div class="section-header">
+                <span class="sub-tag">Why Choose Us</span>
+                <h2 class="section-title">Your Success Is Our Mission</h2>
+                <p class="section-desc">We deliver unmatched professionalism and individualized counselor guidance to make your visa journey stress-free.</p>
+            </div>
+
+            <div class="why-us-grid">
+                <div class="why-card">
+                    <div class="why-icon"><i class="fa-solid fa-user-shield"></i></div>
+                    <h3 class="why-title">Certified Counselors</h3>
+                    <p class="why-desc">Our experienced team stays up-to-date with the latest embassy rules and visa policy amendments.</p>
+                </div>
+                <div class="why-card">
+                    <div class="why-icon"><i class="fa-solid fa-file-signature"></i></div>
+                    <h3 class="why-title">Flawless Documentation</h3>
+                    <p class="why-desc">We meticulously review every document and financial file to minimize visa rejection risks.</p>
+                </div>
+                <div class="why-card">
+                    <div class="why-icon"><i class="fa-solid fa-handshake-angle"></i></div>
+                    <h3 class="why-title">End-to-End Support</h3>
+                    <p class="why-desc">From initial profile assessment to embassy interview prep and ticket guidance, we stand by you.</p>
+                </div>
+                <div class="why-card">
+                    <div class="why-icon"><i class="fa-solid fa-scale-balanced"></i></div>
+                    <h3 class="why-title">Transparent & Honest</h3>
+                    <p class="why-desc">No hidden charges or unrealistic claims. Real guidance tailored to your genuine profile strengths.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="main-footer" id="contact">
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <div class="footer-logo-text">HSN VISA CONSULTANT</div>
+                    <p class="footer-desc">
+                        Your trusted visa counselor and migration consultant committed to turning your global dreams into reality through professional legal guidance.
+                    </p>
+                    <div class="top-social" style="justify-content: flex-start;">
+                        <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                        <a href="https://wa.me/923074374689" target="_blank" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="footer-heading">Quick Links</h4>
+                    <div class="footer-links">
+                        <a href="#"><i class="fa-solid fa-angle-right"></i> Home</a>
+                        <a href="#about"><i class="fa-solid fa-angle-right"></i> About Us</a>
+                        <a href="#non-immigrant"><i class="fa-solid fa-angle-right"></i> Non-Immigrant Visas</a>
+                        <a href="#appointment"><i class="fa-solid fa-angle-right"></i> Book Appointment</a>
+                        <a href="#blogs"><i class="fa-solid fa-angle-right"></i> Blogs & Updates</a>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="footer-heading">Visa Services</h4>
+                    <div class="footer-links">
+                        <a href="#non-immigrant"><i class="fa-solid fa-angle-right"></i> Student Visa</a>
+                        <a href="#non-immigrant"><i class="fa-solid fa-angle-right"></i> Tourist / Visit Visa</a>
+                        <a href="#non-immigrant"><i class="fa-solid fa-angle-right"></i> Business Visa</a>
+                        <a href="#non-immigrant"><i class="fa-solid fa-angle-right"></i> Dependent Visa</a>
+                        <a href="#immigrant"><i class="fa-solid fa-angle-right"></i> Skilled Immigration</a>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="footer-heading">Head Office</h4>
+                    <div class="footer-contact-item">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <span>Office F-207</span>
+                    </div>
+                    <div class="footer-contact-item">
+                        <i class="fa-solid fa-phone"></i>
+                        <span>+92 307 4374689</span>
+                    </div>
+                    <div class="footer-contact-item">
+                        <i class="fa-solid fa-envelope"></i>
+                        <span>hsnvisaconsultant@gmail.com</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="copyright-bar">
+                <p>&copy; 2026 HSN Visa Consultant - All Rights Reserved | Designed for Excellence</p>
             </div>
         </div>
     </footer>
 
-    <!-- JAVASCRIPT LOGIC -->
+    <!-- SCRIPTS -->
     <script>
-        function toggleMobileMenu() {
-            const menu = document.getElementById('mobile-menu');
-            menu.classList.toggle('hidden');
-        }
+        (function() {
+            // Mobile menu toggle
+            const mobileToggle = document.getElementById('mobileToggle');
+            const navMenu = document.getElementById('navMenu');
 
-        function handleDemoSubmit(event) {
-            event.preventDefault();
-            const name = document.getElementById('form-name').value;
-            const country = document.getElementById('form-country').value;
-            
-            document.getElementById('modal-desc').innerText = 
-                `Thank you ${name}! Your request for ${country} assessment has been logged in this live demo.`;
-            
-            document.getElementById('demo-modal').classList.remove('hidden');
-            event.target.reset();
-        }
+            mobileToggle.addEventListener('click', () => {
+                navMenu.classList.toggle('active');
+                const icon = mobileToggle.querySelector('i');
+                if (navMenu.classList.contains('active')) {
+                    icon.classList.remove('fa-bars');
+                    icon.classList.add('fa-xmark');
+                } else {
+                    icon.classList.remove('fa-xmark');
+                    icon.classList.add('fa-bars');
+                }
+            });
 
-        function simulatedWhatsApp() {
-            document.getElementById('modal-desc').innerText = 
-                "WhatsApp Quick Action triggered! In production, this opens a direct chat with your business WhatsApp number.";
-            document.getElementById('demo-modal').classList.remove('hidden');
-        }
+            document.querySelectorAll('.nav-link, .dropdown-item').forEach(link => {
+                link.addEventListener('click', () => {
+                    navMenu.classList.remove('active');
+                    const icon = mobileToggle.querySelector('i');
+                    if (icon) {
+                        icon.classList.remove('fa-xmark');
+                        icon.classList.add('fa-bars');
+                    }
+                });
+            });
 
-        function closeModal() {
-            document.getElementById('demo-modal').classList.add('hidden');
-        }
+            // ---------- UNIFIED WHATSAPP + GOOGLE SHEET APPOINTMENT LOGIC ----------
+            const form = document.getElementById('appointmentForm');
+            const successMsg = document.getElementById('successMsg');
+            const submitBtn = document.getElementById('submitBtn');
+            const whatsappBtn = document.getElementById('whatsappBtn');
+
+            // Business WhatsApp Number (Pakistan format, no + or spaces)
+            const WHATSAPP_NUMBER = '923074374689';
+
+            // Google Sheet Web App URL
+            const GOOGLE_SHEET_URL = 'https://script.google.com/macros/s/AKfycby3Oy4j6Gxp6EMgs_PRzCdFTWYjYMM7ijRywxsAznL_D2GrCds_rmtELbIUHa8GgfxN/exec';
+
+            // Helper: build WhatsApp message from form
+            function buildWhatsAppMessage() {
+                const name = document.getElementById('fullName').value.trim() || 'Not provided';
+                const phone = document.getElementById('phone').value.trim() || 'Not provided';
+                const email = document.getElementById('email').value.trim() || 'Not provided';
+                const category = document.getElementById('visaCategory').value || 'Not selected';
+                const country = document.getElementById('preferredCountry').value || 'Not selected';
+                const date = document.getElementById('preferredDate').value || 'Not selected';
+                const message = document.getElementById('message').value.trim() || 'No additional message';
+
+                return `*New Appointment Request*%0A` +
+                    `*Name:* ${encodeURIComponent(name)}%0A` +
+                    `*Phone:* ${encodeURIComponent(phone)}%0A` +
+                    `*Email:* ${encodeURIComponent(email)}%0A` +
+                    `*Visa Category:* ${encodeURIComponent(category)}%0A` +
+                    `*Preferred Country:* ${encodeURIComponent(country)}%0A` +
+                    `*Preferred Date:* ${encodeURIComponent(date)}%0A` +
+                    `*Message:* ${encodeURIComponent(message)}`;
+            }
+
+            // Update WhatsApp link (FIXED: proper ?text= syntax)
+            function updateWhatsAppLink() {
+                const message = buildWhatsAppMessage();
+                whatsappBtn.href = `https://wa.me/${WHATSAPP_NUMBER}?text=${message}`;
+            }
+
+            // Set initial WhatsApp link
+            updateWhatsAppLink();
+
+            // Listen to form changes to keep WhatsApp link fresh
+            form.addEventListener('input', updateWhatsAppLink);
+            form.addEventListener('change', updateWhatsAppLink);
+
+            // Handle form submission
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+
+                const name = document.getElementById('fullName').value.trim();
+                const phone = document.getElementById('phone').value.trim();
+                const email = document.getElementById('email').value.trim();
+                const category = document.getElementById('visaCategory').value;
+                const country = document.getElementById('preferredCountry').value;
+                const date = document.getElementById('preferredDate').value;
+
+                if (!name || !phone || !email || !category || !country || !date) {
+                    alert('Please fill in all required fields marked with *');
+                    return;
+                }
+
+                const formData = {
+                    fullName: name,
+                    phone: phone,
+                    email: email,
+                    visaCategory: category,
+                    preferredCountry: country,
+                    preferredDate: date,
+                    message: document.getElementById('message').value.trim() || '',
+                    timestamp: new Date().toISOString()
+                };
+
+                submitBtn.disabled = true;
+                submitBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Saving...';
+
+                fetch(GOOGLE_SHEET_URL, {
+                    method: 'POST',
+                    mode: 'no-cors',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(formData)
+                })
+                .then(() => {
+                    successMsg.style.display = 'block';
+                    successMsg.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    updateWhatsAppLink();
+
+                    setTimeout(() => {
+                        form.reset();
+                        updateWhatsAppLink();
+                        setTimeout(() => { successMsg.style.display = 'none'; }, 6000);
+                    }, 2000);
+
+                    submitBtn.disabled = false;
+                    submitBtn.innerHTML = '<i class="fa-solid fa-paper-plane"></i> Submit & Save';
+                })
+                .catch(error => {
+                    console.error('Error saving to Google Sheet:', error);
+                    successMsg.style.display = 'block';
+                    successMsg.innerHTML = '<i class="fa-solid fa-circle-check"></i> Request ready! Use WhatsApp to send directly.';
+                    successMsg.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    updateWhatsAppLink();
+
+                    submitBtn.disabled = false;
+                    submitBtn.innerHTML = '<i class="fa-solid fa-paper-plane"></i> Submit & Save';
+                });
+            });
+
+            // Update WhatsApp link right before click
+            whatsappBtn.addEventListener('click', function() {
+                updateWhatsAppLink();
+            });
+
+        })();
     </script>
 </body>
 </html>
