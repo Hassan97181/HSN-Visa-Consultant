@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HSN VISA CONSULTANT | Your Visa Counselor - Portfolio Demo</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            crimson: '#8B1E22',
+                            wine: '#6B1216',
+                            darkWine: '#4A0B0E',
+                            cream: '#FDFBF7',
+                            softCream: '#F4EFE6',
+                            cardCream: '#FFFFFF',
+                            gold: '#C5A059',
+                            brightGold: '#D4AF37',
+                            darkText: '#1F1113',
+                            muted: '#665D5E'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                        serif: ['Cinzel', 'serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .glass-nav {
+            background-color: rgba(253, 251, 247, 0.95);
+            backdrop-filter: blur(12px);
+        }
+        .logo-shadow {
+            box-shadow: 0 4px 15px rgba(139, 30, 34, 0.2);
+        }
+        .hero-pattern {
+            background-color: #8B1E22;
+            background-image: radial-gradient(rgba(212, 175, 55, 0.15) 1px, transparent 1px);
+            background-size: 24px 24px;
+        }
+    </style>
+</head>
+<body class="bg-brand-cream text-brand-darkText font-sans antialiased selection:bg-brand-crimson selection:text-white">
+
+    <!-- TOP NOTIFICATION / CONTRAST BAR -->
+    <div class="bg-brand-darkWine text-white text-xs py-2 px-4 border-b border-brand-gold/30">
+        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
+            <div class="flex items-center gap-3">
+                <span class="bg-brand-gold text-brand-darkWine font-extrabold text-[10px] px-2 py-0.5 rounded tracking-widest uppercase">Specialized</span>
+                <span class="text-brand-softCream font-medium"><i class="fa-solid fa-passport text-brand-gold mr-1.5"></i> 100% Focused Exclusively on Permanent Residency & Immigrant Visas</span>
+            </div>
+            <div class="flex items-center gap-6 font-semibold text-brand-softCream">
+                <span><i class="fa-solid fa-phone text-brand-gold mr-1"></i> +92 300 1234567</span>
+                <span class="hidden md:inline"><i class="fa-solid fa-envelope text-brand-gold mr-1"></i> info@hsnvisaconsultant.com</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- MAIN NAVIGATION HEADER -->
+    <header class="sticky top-0 z-40 glass-nav border-b border-brand-crimson/10 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-24">
+                
+                <!-- BRAND LOGO (ECHOES LOGO DESIGN) -->
+                <a href="#home" class="flex items-center gap-3.5 group">
+                    <div class="w-14 h-14 rounded-full bg-brand-cream border-2 border-brand-crimson logo-shadow flex items-center justify-center p-1.5 transition-transform group-hover:scale-105">
+                        <svg viewBox="0 0 100 100" class="w-full h-full text-brand-crimson">
+                            <circle cx="50" cy="50" r="46" fill="none" stroke="#8B1E22" stroke-width="2.5"/>
+                            <path d="M 20 50 A 30 30 0 1 1 80 50" fill="none" stroke="#8B1E22" stroke-width="3.5" stroke-dasharray="75 8"/>
+                            <circle cx="50" cy="50" r="22" fill="#8B1E22" opacity="0.12"/>
+                            <circle cx="50" cy="50" r="22" fill="none" stroke="#8B1E22" stroke-width="2.5"/>
+                            <path d="M 28 50 L 72 50 M 50 28 L 50 72 M 34 38 Q 50 50 34 62 M 66 38 Q 50 50 66 62" fill="none" stroke="#8B1E22" stroke-width="1.8"/>
+                            <path d="M 72 25 L 82 20 L 78 28 L 84 34 L 80 35 L 75 30 L 70 33 Z" fill="#8B1E22"/>
+                            <path d="M 72 45 L 84 49 L 72 53 L 60 49 Z M 80 50.5 L 80 57" fill="#1F1113" stroke="#1F1113" stroke-width="1"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <div class="text-xl sm:text-2xl font-extrabold font-serif text-brand-crimson tracking-tight leading-none">
+                            HSN VISA <span class="text-brand-darkText font-sans font-bold">CONSULTANT</span>
+                        </div>
+                        <div class="text-[10px] sm:text-[11px] font-bold text-brand-darkText tracking-widest uppercase mt-1 flex items-center gap-1.5">
+                            <i class="fa-solid fa-plane-departure text-brand-crimson text-[9px]"></i>
+                            <span>YOUR VISA COUNSELOR</span>
+                            <i class="fa-solid fa-plane-arrival text-brand-crimson text-[9px]"></i>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- DESKTOP NAV LINKS -->
+                <nav class="hidden lg:flex items-center gap-8 text-sm font-bold tracking-wide">
+                    <a href="#home" class="text-brand-crimson border-b-2 border-brand-crimson pb-1">Home</a>
+                    <a href="#about" class="text-brand-darkText hover:text-brand-crimson transition-colors">About Us</a>
+                    <a href="#services" class="text-brand-darkText hover:text-brand-crimson transition-colors">Immigration Pathways</a>
+                    <a href="#why-us" class="text-brand-darkText hover:text-brand-crimson transition-colors">Why Choose Us</a>
+                    <a href="#process" class="text-brand-darkText hover:text-brand-crimson transition-colors">Process</a>
+                    <a href="#contact" class="text-brand-darkText hover:text-brand-crimson transition-colors">Contact</a>
+                </nav>
+
+                <!-- HEADER CTA -->
+                <div class="flex items-center gap-3">
+                    <a href="#contact" class="hidden sm:inline-flex items-center gap-2 bg-brand-crimson hover:bg-brand-wine text-white font-bold px-5 py-2.5 rounded-xl text-xs sm:text-sm shadow-md transition-all hover:-translate-y-0.5">
+                        <i class="fa-solid fa-clipboard-check text-brand-brightGold"></i>
+                        Get Assessment
+                    </a>
+                    <button onclick="toggleMobileMenu()" class="lg:hidden text-brand-crimson p-2 rounded-lg hover:bg-brand-softCream">
+                        <i class="fa-solid fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- MOBILE MENU OVERLAY -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-brand-cream border-t border-brand-crimson/20 px-6 py-5 space-y-3 shadow-xl">
+            <a href="#home" onclick="toggleMobileMenu()" class="block py-2 text-brand-crimson font-bold">Home</a>
+            <a href="#about" onclick="toggleMobileMenu()" class="block py-2 text-brand-darkText font-bold">About Us</a>
+            <a href="#services" onclick="toggleMobileMenu()" class="block py-2 text-brand-darkText font-bold">Immigration Pathways</a>
+            <a href="#why-us" onclick="toggleMobileMenu()" class="block py-2 text-brand-darkText font-bold">Why Choose Us</a>
+            <a href="#process" onclick="toggleMobileMenu()" class="block py-2 text-brand-darkText font-bold">4-Step Process</a>
+            <a href="#contact" onclick="toggleMobileMenu()" class="block py-2 text-brand-darkText font-bold">Contact Counselor</a>
+            <a href="#contact" onclick="toggleMobileMenu()" class="w-full mt-3 inline-block text-center bg-brand-crimson text-white font-bold py-3 rounded-xl shadow">Get Assessment</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- 1. HERO SECTION -->
+        <section id="home" class="relative hero-pattern text-white py-20 lg:py-28 overflow-hidden border-b-4 border-brand-gold">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                    
+                    <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                        <div class="inline-flex items-center gap-2 bg-black/20 backdrop-blur-md px-4 py-2 rounded-full text-brand-brightGold text-xs font-bold uppercase tracking-wider border border-white/15">
+                            <i class="fa-solid fa-shield-halved"></i> Certified & Specialized Immigrant Advisory
+                        </div>
+                        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold font-serif leading-tight">
+                            Your Trusted Partner For <span class="text-brand-brightGold">Permanent Residency</span> & Global Migration
+                        </h1>
+                        <p class="text-brand-softCream text-base sm:text-lg font-light leading-relaxed max-w-2xl">
+                            At <strong class="font-semibold text-white">HSN VISA CONSULTANT</strong>, we don't process temporary visit visas. We focus 100% of our expert legal counselor resources on permanent immigrant cases, skilled migration points programs, and family PR reunification.
+                        </p>
+
+                        <div class="flex flex-col sm:flex-row gap-4 pt-4 justify-center lg:justify-start">
+                            <a href="#contact" class="inline-flex items-center justify-center gap-3 bg-brand-brightGold hover:bg-brand-gold text-brand-darkWine font-extrabold px-8 py-4 rounded-xl text-base shadow-xl transition-all transform hover:-translate-y-1">
+                                <span>Book PR Profile Audit</span>
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+                            <a href="#services" class="inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 text-white font-bold px-7 py-4 rounded-xl text-base backdrop-blur border border-white/25 transition-all">
+                                <i class="fa-solid fa-compass text-brand-brightGold"></i>
+                                <span>Explore PR Pathways</span>
+                            </a>
+                        </div>
+
+                        <!-- STATS COUNTER -->
+                        <div class="pt-8 grid grid-cols-3 gap-4 sm:gap-6 border-t border-white/15">
+                            <div>
+                                <div class="text-2xl sm:text-3xl font-extrabold font-serif text-brand-brightGold">98%</div>
+                                <div class="text-xs text-brand-softCream mt-1 font-medium">PR Approval Track</div>
+                            </div>
+                            <div>
+                                <div class="text-2xl sm:text-3xl font-extrabold font-serif text-brand-brightGold">10+</div>
+                                <div class="text-xs text-brand-softCream mt-1 font-medium">Target Destinations</div>
+                            </div>
+                            <div>
+                                <div class="text-2xl sm:text-3xl font-extrabold font-serif text-brand-brightGold">12+ Yrs</div>
+                                <div class="text-xs text-brand-softCream mt-1 font-medium">Counseling Expertise</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- HERO VISUAL / EMBLEM CARD -->
+                    <div class="lg:col-span-5">
+                        <div class="bg-brand-cream text-brand-darkText rounded-3xl p-8 shadow-2xl border-2 border-brand-brightGold/40 relative text-center">
+                            <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-brand-brightGold text-brand-darkWine font-extrabold text-xs uppercase px-5 py-1.5 rounded-full shadow-lg border border-white">
+                                Exclusive Immigrant Advisory
+                            </div>
+
+                            <div class="w-28 h-28 rounded-full bg-brand-cream border-4 border-brand-crimson logo-shadow mx-auto mt-2 mb-4 flex items-center justify-center p-3">
+                                <svg viewBox="0 0 100 100" class="w-full h-full text-brand-crimson">
+                                    <circle cx="50" cy="50" r="46" fill="none" stroke="#8B1E22" stroke-width="2.5"/>
+                                    <path d="M 20 50 A 30 30 0 1 1 80 50" fill="none" stroke="#8B1E22" stroke-width="3.5" stroke-dasharray="75 8"/>
+                                    <circle cx="50" cy="50" r="22" fill="#8B1E22" opacity="0.12"/>
+                                    <circle cx="50" cy="50" r="22" fill="none" stroke="#8B1E22" stroke-width="2.5"/>
+                                    <path d="M 28 50 L 72 50 M 50 28 L 50 72 M 34 38 Q 50 50 34 62 M 66 38 Q 50 50 66 62" fill="none" stroke="#8B1E22" stroke-width="1.8"/>
+                                    <path d="M 72 25 L 82 20 L 78 28 L 84 34 L 80 35 L 75 30 L 70 33 Z" fill="#8B1E22"/>
+                                    <path d="M 72 45 L 84 49 L 72 53 L 60 49 Z M 80 50.5 L 80 57" fill="#1F1113" stroke="#1F1113" stroke-width="1"/>
+                                </svg>
+                            </div>
+
+                            <h3 class="text-2xl font-extrabold font-serif text-brand-crimson">HSN VISA CONSULTANT</h3>
+                            <p class="text-xs font-bold text-brand-darkText tracking-widest uppercase mt-1">YOUR VISA COUNSELOR</p>
+
+                            <div class="mt-6 space-y-3 text-left text-xs font-semibold text-brand-muted bg-brand-softCream p-4 rounded-xl border border-brand-crimson/10">
+                                <div class="flex items-center gap-2.5">
+                                    <i class="fa-solid fa-circle-check text-brand-crimson"></i>
+                                    <span>Skilled Migration & CRS Point Optimization</span>
+                                </div>
+                                <div class="flex items-center gap-2.5">
+                                    <i class="fa-solid fa-circle-check text-brand-crimson"></i>
+                                    <span>Spousal & Family PR Reunification Filing</span>
+                                </div>
+                                <div class="flex items-center gap-2.5">
+                                    <i class="fa-solid fa-circle-check text-brand-crimson"></i>
+                                    <span>Business Investment & Golden Residency</span>
+                                </div>
+                                <div class="flex items-center gap-2.5">
+                                    <i class="fa-solid fa-circle-check text-brand-crimson"></i>
+                                    <span>Procedural Fairness & Appeals Support</span>
+                                </div>
+                            </div>
+
+                            <a href="#contact" class="mt-6 w-full inline-block bg-brand-crimson hover:bg-brand-wine text-white font-bold py-3.5 rounded-xl text-sm shadow transition-colors">
+                                Free Qualification Check
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. ABOUT US SECTION -->
+        <section id="about" class="py-20 bg-brand-cream border-b border-brand-crimson/10">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                    
+                    <div class="lg:col-span-6 space-y-6">
+                        <span class="bg-brand-crimson/10 text-brand-crimson font-extrabold text-xs uppercase tracking-widest px-3.5 py-1.5 rounded-full">About HSN Visa Advisory</span>
+                        <h2 class="text-3xl sm:text-4xl font-extrabold font-serif text-brand-crimson leading-tight">
+                            Dedicated Counselor Guidance For Your Long-Term Global Success
+                        </h2>
+                        <p class="text-brand-muted text-sm leading-relaxed">
+                            <strong>HSN VISA CONSULTANT (YOUR VISA COUNSELOR)</strong> was established with a singular mission: providing honest, transparent, and legally sound immigration guidance for families and professionals seeking permanent migration.
+                        </p>
+                        <p class="text-brand-muted text-sm leading-relaxed">
+                            Unlike generic agencies processing short-term permits, we specialize exclusively in permanent residency routes. Every document, employment reference, and point credential is vetted to ensure 100% compliance with government immigration laws.
+                        </p>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
+                            <div class="p-4 bg-brand-softCream rounded-2xl border border-brand-crimson/15">
+                                <div class="w-10 h-10 rounded-xl bg-brand-crimson text-brand-brightGold flex items-center justify-center text-lg font-bold mb-2">
+                                    <i class="fa-solid fa-scale-balanced"></i>
+                                </div>
+                                <h4 class="font-bold text-brand-crimson text-sm">Ethical Counseling</h4>
+                                <p class="text-xs text-brand-muted mt-1">Zero misrepresentation, transparent evaluation, and honest feedback on your score.</p>
+                            </div>
+                            <div class="p-4 bg-brand-softCream rounded-2xl border border-brand-crimson/15">
+                                <div class="w-10 h-10 rounded-xl bg-brand-crimson text-brand-brightGold flex items-center justify-center text-lg font-bold mb-2">
+                                    <i class="fa-solid fa-user-shield"></i>
+                                </div>
+                                <h4 class="font-bold text-brand-crimson text-sm">Personal Counselor</h4>
+                                <p class="text-xs text-brand-muted mt-1">Direct single-point contact throughout your entire permanent residency journey.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="lg:col-span-6">
+                        <div class="bg-brand-cardCream p-8 rounded-3xl border border-brand-crimson/20 shadow-xl space-y-6">
+                            <h3 class="text-2xl font-bold font-serif text-brand-crimson border-b pb-4 border-slate-200">Our Core Migration Commitments</h3>
+                            
+                            <div class="flex items-start gap-4">
+                                <div class="w-10 h-10 rounded-full bg-brand-crimson/10 text-brand-crimson flex items-center justify-center text-lg font-bold shrink-0">1</div>
+                                <div>
+                                    <h4 class="font-bold text-brand-darkText text-base">Comprehensive CRS & Points Audit</h4>
+                                    <p class="text-xs text-brand-muted mt-1">Detailed evaluation of age, education, ECA credentials, and language test requirements before filing.</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start gap-4">
+                                <div class="w-10 h-10 rounded-full bg-brand-crimson/10 text-brand-crimson flex items-center justify-center text-lg font-bold shrink-0">2</div>
+                                <div>
+                                    <h4 class="font-bold text-brand-darkText text-base">State & Provincial Nomination Strategy</h4>
+                                    <p class="text-xs text-brand-muted mt-1">Matching your occupation code (NOC/ANZSCO) with active in-demand provincial streams (PNP / Subclass 190).</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start gap-4">
+                                <div class="w-10 h-10 rounded-full bg-brand-crimson/10 text-brand-crimson flex items-center justify-center text-lg font-bold shrink-0">3</div>
+                                <div>
+                                    <h4 class="font-bold text-brand-darkText text-base">Complete Post-PR Landing Guidance</h4>
+                                    <p class="text-xs text-brand-muted mt-1">Assistance with initial PR card delivery, SIN/TFN registration, and settlement advice.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. IMMIGRATION PATHWAYS (SERVICES) -->
+        <section id="services" class="py-20 bg-brand-softCream/60 border-b border-brand-crimson/10">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <span class="bg-brand-crimson/10 text-brand-crimson text-xs font-bold uppercase tracking-widest px-3.5 py-1.5 rounded-full">Focused Immigrant Pathways</span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold font-serif text-brand-crimson mt-3">Permanent Residency Services</h2>
+                    <p class="text-brand-muted text-base mt-2">Specialized visa pathways designed to establish permanent legal residence worldwide.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    
+                    <!-- SERVICE CARD 1 -->
+                    <div class="bg-brand-cardCream p-8 rounded-3xl border border-brand-crimson/15 shadow-md hover:shadow-2xl transition-all group hover:-translate-y-1.5">
+                        <div class="w-14 h-14 bg-brand-crimson text-brand-brightGold rounded-2xl flex items-center justify-center text-2xl mb-6 shadow-md group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-graduation-cap"></i>
+                        </div>
+                        <h3 class="text-xl font-bold font-serif text-brand-crimson mb-3">Skilled PR Migration</h3>
+                        <p class="text-brand-muted text-xs leading-relaxed mb-6">Canada Express Entry (FSW/CEC), Provincial Nominations (PNP), and Australia Subclass 189/190 GSM streams.</p>
+                        <ul class="space-y-2 text-[11px] font-semibold text-brand-darkText mb-6">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-crimson"></i> Points Grid Optimization</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-crimson"></i> ECA & Skills Assessment</li>
+                        </ul>
+                        <a href="#contact" class="text-brand-crimson font-extrabold text-xs flex items-center gap-1 hover:text-brand-wine">Book Skill Audit &rarr;</a>
+                    </div>
+
+                    <!-- SERVICE CARD 2 -->
+                    <div class="bg-brand-cardCream p-8 rounded-3xl border border-brand-crimson/15 shadow-md hover:shadow-2xl transition-all group hover:-translate-y-1.5">
+                        <div class="w-14 h-14 bg-brand-crimson text-brand-brightGold rounded-2xl flex items-center justify-center text-2xl mb-6 shadow-md group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-house-chimney-user"></i>
+                        </div>
+                        <h3 class="text-xl font-bold font-serif text-brand-crimson mb-3">Spousal & Family PR</h3>
+                        <p class="text-brand-muted text-xs leading-relaxed mb-6">Permanent sponsorship applications for spouses, common-law partners, and dependent children with proof curation.</p>
+                        <ul class="space-y-2 text-[11px] font-semibold text-brand-darkText mb-6">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-crimson"></i> Sponsor Eligibility Check</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-crimson"></i> Genuine Relationship Proof</li>
+                        </ul>
+                        <a href="#contact" class="text-brand-crimson font-extrabold text-xs flex items-center gap-1 hover:text-brand-wine">Sponsorship Inquiry &rarr;</a>
+                    </div>
+
+                    <!-- SERVICE CARD 3 -->
+                    <div class="bg-brand-cardCream p-8 rounded-3xl border border-brand-crimson/15 shadow-md hover:shadow-2xl transition-all group hover:-translate-y-1.5">
+                        <div class="w-14 h-14 bg-brand-crimson text-brand-brightGold rounded-2xl flex items-center justify-center text-2xl mb-6 shadow-md group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-briefcase"></i>
+                        </div>
+                        <h3 class="text-xl font-bold font-serif text-brand-crimson mb-3">Business & Investor PR</h3>
+                        <p class="text-brand-muted text-xs leading-relaxed mb-6">Residency-by-investment, Start-up Visas, and Entrepreneur pathways for high-net-worth individuals.</p>
+                        <ul class="space-y-2 text-[11px] font-semibold text-brand-darkText mb-6">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-crimson"></i> UK / EU Investor Routes</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-crimson"></i> Net Worth Verification</li>
+                        </ul>
+                        <a href="#contact" class="text-brand-crimson font-extrabold text-xs flex items-center gap-1 hover:text-brand-wine">Investor Options &rarr;</a>
+                    </div>
+
+                    <!-- SERVICE CARD 4 -->
+                    <div class="bg-brand-cardCream p-8 rounded-3xl border border-brand-crimson/15 shadow-md hover:shadow-2xl transition-all group hover:-translate-y-1.5">
+                        <div class="w-14 h-14 bg-brand-crimson text-brand-brightGold rounded-2xl flex items-center justify-center text-2xl mb-6 shadow-md group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-scale-balanced"></i>
+                        </div>
+                        <h3 class="text-xl font-bold font-serif text-brand-crimson mb-3">Appeals & PFL Responses</h3>
+                        <p class="text-brand-muted text-xs leading-relaxed mb-6">Expert counselor response to Procedural Fairness Letters (PFL), visa refusals, and PR card renewals.</p>
+                        <ul class="space-y-2 text-[11px] font-semibold text-brand-darkText mb-6">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-crimson"></i> Legal Case Review</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-crimson"></i> Statutory Submissions</li>
+                        </ul>
+                        <a href="#contact" class="text-brand-crimson font-extrabold text-xs flex items-center gap-1 hover:text-brand-wine">Legal Assistance &rarr;</a>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. WHY CHOOSE US -->
+        <section id="why-us" class="py-20 bg-brand-cream border-b border-brand-crimson/10">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <span class="bg-brand-crimson/10 text-brand-crimson text-xs font-bold uppercase tracking-widest px-3.5 py-1.5 rounded-full">The Counselor Difference</span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold font-serif text-brand-crimson mt-3">Why Choose HSN Visa Consultant?</h2>
+                    <p class="text-brand-muted text-base">Comparing general visa agents against our specialized immigrant advisory practice.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    
+                    <div class="bg-brand-cardCream p-8 rounded-3xl border-2 border-brand-gold/40 shadow-lg relative">
+                        <div class="w-12 h-12 bg-brand-crimson text-brand-brightGold rounded-xl flex items-center justify-center text-xl mb-4">
+                            <i class="fa-solid fa-bullseye"></i>
+                        </div>
+                        <h3 class="text-xl font-bold font-serif text-brand-crimson mb-2">100% Immigrant Specialization</h3>
+                        <p class="text-xs text-brand-muted leading-relaxed">Unlike agencies processing short-term visit visas, our complete focus is on permanent residency, points systems, and long-term settlement.</p>
+                    </div>
+
+                    <div class="bg-brand-cardCream p-8 rounded-3xl border-2 border-brand-gold/40 shadow-lg relative">
+                        <div class="w-12 h-12 bg-brand-crimson text-brand-brightGold rounded-xl flex items-center justify-center text-xl mb-4">
+                            <i class="fa-solid fa-magnifying-glass-chart"></i>
+                        </div>
+                        <h3 class="text-xl font-bold font-serif text-brand-crimson mb-2">Strict Eligibility Screening</h3>
+                        <p class="text-xs text-brand-muted leading-relaxed">We only take on cases with realistic paths to approval. If your CRS or points grid is low, we advise you on concrete score-enhancement steps.</p>
+                    </div>
+
+                    <div class="bg-brand-cardCream p-8 rounded-3xl border-2 border-brand-gold/40 shadow-lg relative">
+                        <div class="w-12 h-12 bg-brand-crimson text-brand-brightGold rounded-xl flex items-center justify-center text-xl mb-4">
+                            <i class="fa-solid fa-file-contract"></i>
+                        </div>
+                        <h3 class="text-xl font-bold font-serif text-brand-crimson mb-2">Meticulous Documentation</h3>
+                        <p class="text-xs text-brand-muted leading-relaxed">Every employment reference, job description match, and police clearance is reviewed under exact legal standards to eliminate refusal risks.</p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. SIMPLE 4-STEP PROCESS -->
+        <section id="process" class="py-20 bg-brand-softCream/40 border-b border-brand-crimson/10">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <span class="bg-brand-crimson/10 text-brand-crimson text-xs font-bold uppercase tracking-widest px-3.5 py-1.5 rounded-full">Streamlined Journey</span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold font-serif text-brand-crimson mt-3">4 Steps To Your PR Visa Grant</h2>
+                    <p class="text-brand-muted text-base">A transparent, structured counselor workflow ensuring legal accuracy.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-6 text-center">
+                    
+                    <div class="bg-brand-cardCream p-6 rounded-2xl border border-brand-crimson/15 shadow-sm">
+                        <div class="w-12 h-12 bg-brand-crimson text-brand-brightGold font-extrabold text-xl rounded-full flex items-center justify-center mx-auto mb-4 shadow">1</div>
+                        <h4 class="font-bold text-brand-crimson text-base mb-2">Initial Consultation</h4>
+                        <p class="text-xs text-brand-muted leading-relaxed">In-depth discussion of your age, qualification, language score, and target destination.</p>
+                    </div>
+
+                    <div class="bg-brand-cardCream p-6 rounded-2xl border border-brand-crimson/15 shadow-sm">
+                        <div class="w-12 h-12 bg-brand-crimson text-brand-brightGold font-extrabold text-xl rounded-full flex items-center justify-center mx-auto mb-4 shadow">2</div>
+                        <h4 class="font-bold text-brand-crimson text-base mb-2">Points Evaluation</h4>
+                        <p class="text-xs text-brand-muted leading-relaxed">Exact CRS / Points calculation and Educational Credential Assessment (ECA) dispatch.</p>
+                    </div>
+
+                    <div class="bg-brand-cardCream p-6 rounded-2xl border border-brand-crimson/15 shadow-sm">
+                        <div class="w-12 h-12 bg-brand-crimson text-brand-brightGold font-extrabold text-xl rounded-full flex items-center justify-center mx-auto mb-4 shadow">3</div>
+                        <h4 class="font-bold text-brand-crimson text-base mb-2">Document Curation</h4>
+                        <p class="text-xs text-brand-muted leading-relaxed">Assembling job duties letters, police certificates, medicals, and financial proof.</p>
+                    </div>
+
+                    <div class="bg-brand-cardCream p-6 rounded-2xl border border-brand-crimson/15 shadow-sm">
+                        <div class="w-12 h-12 bg-emerald-700 text-white font-extrabold text-xl rounded-full flex items-center justify-center mx-auto mb-4 shadow">4</div>
+                        <h4 class="font-bold text-brand-crimson text-base mb-2">Lodgement & PR Grant</h4>
+                        <p class="text-xs text-brand-muted leading-relaxed">Formal EOI submission, Invitation to Apply (ITA) response, and COPR issuance.</p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. CONTACT & EVALUATION FORM -->
+        <section id="contact" class="py-20 bg-brand-cream">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+                    
+                    <!-- LEFT COLUMN: CONTACT DETAILS -->
+                    <div class="lg:col-span-5 space-y-6">
+                        <span class="bg-brand-crimson/10 text-brand-crimson font-extrabold text-xs uppercase tracking-widest px-3.5 py-1.5 rounded-full">Direct Communication</span>
+                        <h2 class="text-3xl font-extrabold font-serif text-brand-crimson">Consult With Your Visa Counselor</h2>
+                        <p class="text-brand-muted text-sm leading-relaxed">Ready to begin your permanent residency case? Contact us directly or submit your information for an eligibility review.</p>
+
+                        <div class="space-y-4 pt-2">
+                            <div class="flex items-start gap-4 p-4 bg-brand-cardCream rounded-2xl border border-brand-crimson/15 shadow-sm">
+                                <div class="w-10 h-10 rounded-full bg-brand-crimson text-brand-brightGold flex items-center justify-center text-lg flex-shrink-0">
+                                    <i class="fa-solid fa-location-dot"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-brand-crimson text-sm">Principal Office</h4>
+                                    <p class="text-xs text-brand-muted mt-1">Suite 402, Executive Heights, Main Boulevard, Gulberg III, Lahore, Pakistan</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start gap-4 p-4 bg-brand-cardCream rounded-2xl border border-brand-crimson/15 shadow-sm">
+                                <div class="w-10 h-10 rounded-full bg-brand-crimson text-brand-brightGold flex items-center justify-center text-lg flex-shrink-0">
+                                    <i class="fa-solid fa-phone"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-brand-crimson text-sm">Direct Phone & WhatsApp</h4>
+                                    <p class="text-xs text-brand-muted mt-1">+92 (300) 123-4567 | +92 (42) 3578-9000</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start gap-4 p-4 bg-brand-cardCream rounded-2xl border border-brand-crimson/15 shadow-sm">
+                                <div class="w-10 h-10 rounded-full bg-brand-crimson text-brand-brightGold flex items-center justify-center text-lg flex-shrink-0">
+                                    <i class="fa-solid fa-envelope"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-brand-crimson text-sm">Inquiry Email</h4>
+                                    <p class="text-xs text-brand-muted mt-1">info@hsnvisaconsultant.com</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- QUICK WHATSAPP DEMO BUTTON -->
+                        <div class="pt-2">
+                            <button onclick="simulatedWhatsApp()" class="w-full bg-emerald-700 hover:bg-emerald-800 text-white font-bold py-3.5 rounded-xl text-sm shadow flex items-center justify-center gap-2">
+                                <i class="fa-brands fa-whatsapp text-xl"></i>
+                                Quick WhatsApp Inquiry
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- RIGHT COLUMN: DEMO FORM -->
+                    <div class="lg:col-span-7 bg-brand-cardCream p-8 sm:p-10 rounded-3xl border-2 border-brand-crimson/15 shadow-xl">
+                        <h3 class="text-2xl font-bold font-serif text-brand-crimson mb-1">Book PR Profile Assessment</h3>
+                        <p class="text-xs text-brand-muted mb-6">Fill in your information for a personalized evaluation by HSN Visa Counselor.</p>
+
+                        <form onsubmit="handleDemoSubmit(event)" class="space-y-4">
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <div>
+                                    <label class="block text-xs font-bold uppercase mb-1 text-brand-darkText">Full Name *</label>
+                                    <input type="text" id="form-name" required placeholder="e.g. Muhammad Hassan" class="w-full p-3 rounded-xl border border-slate-300 text-sm focus:ring-2 focus:ring-brand-crimson focus:outline-none">
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-bold uppercase mb-1 text-brand-darkText">Phone / WhatsApp *</label>
+                                    <input type="tel" id="form-phone" required placeholder="+92 300 1234567" class="w-full p-3 rounded-xl border border-slate-300 text-sm focus:ring-2 focus:ring-brand-crimson focus:outline-none">
+                                </div>
+                            </div>
+
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <div>
+                                    <label class="block text-xs font-bold uppercase mb-1 text-brand-darkText">Target Country *</label>
+                                    <select id="form-country" required class="w-full p-3 rounded-xl border border-slate-300 text-sm focus:ring-2 focus:ring-brand-crimson focus:outline-none bg-white">
+                                        <option value="Canada PR">Canada Permanent Residence</option>
+                                        <option value="Australia PR">Australia General Skilled</option>
+                                        <option value="UK Migration">UK Skilled Migration</option>
+                                        <option value="Europe PR">Europe Investment / PR</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-bold uppercase mb-1 text-brand-darkText">Visa Category *</label>
+                                    <select id="form-category" required class="w-full p-3 rounded-xl border border-slate-300 text-sm focus:ring-2 focus:ring-brand-crimson focus:outline-none bg-white">
+                                        <option value="Skilled Worker PR">Skilled Worker PR</option>
+                                        <option value="Spousal / Family PR">Spousal / Family PR</option>
+                                        <option value="Business Investor">Business / Investor Visa</option>
+                                        <option value="Legal Appeal / PFL">Appeal / PFL Response</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div>
+                                <label class="block text-xs font-bold uppercase mb-1 text-brand-darkText">Highest Qualification & Experience</label>
+                                <textarea id="form-message" rows="3" placeholder="Mention your degree (e.g. Master's in IT), work experience years, and English test status..." class="w-full p-3 rounded-xl border border-slate-300 text-sm focus:ring-2 focus:ring-brand-crimson focus:outline-none"></textarea>
+                            </div>
+
+                            <button type="submit" class="w-full bg-brand-crimson hover:bg-brand-wine text-white font-bold py-4 rounded-xl text-sm shadow-md transition-all flex items-center justify-center gap-2">
+                                <i class="fa-solid fa-paper-plane text-brand-brightGold"></i>
+                                Submit Profile To Counselor
+                            </button>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- DEMO MODAL NOTIFICATION -->
+    <div id="demo-modal" class="fixed inset-0 z-50 hidden bg-brand-darkWine/80 backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="bg-brand-cream rounded-3xl max-w-md w-full p-8 border-2 border-brand-brightGold shadow-2xl text-center relative">
+            <div class="w-16 h-16 bg-brand-crimson text-brand-brightGold rounded-full flex items-center justify-center text-3xl mx-auto mb-4 shadow-lg">
+                <i class="fa-solid fa-circle-check"></i>
+            </div>
+            <h3 class="text-2xl font-bold font-serif text-brand-crimson">Assessment Dispatched!</h3>
+            <p class="text-xs text-brand-muted mt-2 leading-relaxed" id="modal-desc">
+                Thank you. Your immigration profile details have been submitted to HSN Visa Counselor.
+            </p>
+            <button onclick="closeModal()" class="mt-6 w-full bg-brand-crimson text-white font-bold py-3 rounded-xl text-xs uppercase tracking-wider shadow">
+                Close Preview
+            </button>
+        </div>
+    </div>
+
+    <!-- 7. FOOTER -->
+    <footer class="bg-brand-darkWine text-white border-t-4 border-brand-brightGold pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 pb-12 border-b border-white/10">
+                
+                <div class="lg:col-span-5 space-y-4">
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-full bg-brand-cream border border-brand-crimson flex items-center justify-center p-1">
+                            <svg viewBox="0 0 100 100" class="w-full h-full text-brand-crimson">
+                                <circle cx="50" cy="50" r="46" fill="none" stroke="#8B1E22" stroke-width="2.5"/>
+                                <circle cx="50" cy="50" r="22" fill="none" stroke="#8B1E22" stroke-width="2.5"/>
+                                <path d="M 28 50 L 72 50 M 50 28 L 50 72" stroke="#8B1E22" stroke-width="1.8"/>
+                                <path d="M 72 25 L 82 20 L 78 28 L 84 34 L 80 35 L 75 30 L 70 33 Z" fill="#8B1E22"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <div class="text-lg font-bold font-serif text-brand-brightGold leading-none">HSN VISA CONSULTANT</div>
+                            <div class="text-[10px] font-bold text-brand-softCream tracking-wider mt-0.5">YOUR VISA COUNSELOR</div>
+                        </div>
+                    </div>
+                    <p class="text-xs text-brand-softCream leading-relaxed max-w-sm">
+                        Dedicated consultancy focusing exclusively on immigrant cases: Permanent Residency, Skilled Workers, Spousal Reunification, and Investor pathways.
+                    </p>
+                </div>
+
+                <div class="lg:col-span-3 space-y-3">
+                    <h4 class="text-sm font-bold font-serif text-brand-brightGold uppercase tracking-wider">Quick Navigation</h4>
+                    <ul class="space-y-2 text-xs font-medium text-brand-softCream">
+                        <li><a href="#home" class="hover:text-brand-brightGold">Home</a></li>
+                        <li><a href="#about" class="hover:text-brand-brightGold">About Counselor</a></li>
+                        <li><a href="#services" class="hover:text-brand-brightGold">Immigration Pathways</a></li>
+                        <li><a href="#process" class="hover:text-brand-brightGold">4-Step Process</a></li>
+                    </ul>
+                </div>
+
+                <div class="lg:col-span-4 space-y-3">
+                    <h4 class="text-sm font-bold font-serif text-brand-brightGold uppercase tracking-wider">Legal Disclaimer</h4>
+                    <p class="text-[11px] text-brand-softCream leading-relaxed">
+                        HSN Visa Consultant provides professional advisory and application preparation for permanent migration. Final decisions rest solely with respective government authorities.
+                    </p>
+                </div>
+
+            </div>
+
+            <div class="pt-8 flex flex-col sm:flex-row justify-between items-center text-xs text-brand-softCream gap-4">
+                <p>&copy; 2026 HSN VISA CONSULTANT - YOUR VISA COUNSELOR. All rights reserved.</p>
+                <div class="flex items-center gap-4 text-sm text-brand-brightGold">
+                    <a href="#home" class="hover:text-white"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="#home" class="hover:text-white"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#home" class="hover:text-white"><i class="fa-brands fa-linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JAVASCRIPT LOGIC -->
+    <script>
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        }
+
+        function handleDemoSubmit(event) {
+            event.preventDefault();
+            const name = document.getElementById('form-name').value;
+            const country = document.getElementById('form-country').value;
+            
+            document.getElementById('modal-desc').innerText = 
+                `Thank you ${name}! Your request for ${country} assessment has been logged in this live demo.`;
+            
+            document.getElementById('demo-modal').classList.remove('hidden');
+            event.target.reset();
+        }
+
+        function simulatedWhatsApp() {
+            document.getElementById('modal-desc').innerText = 
+                "WhatsApp Quick Action triggered! In production, this opens a direct chat with your business WhatsApp number.";
+            document.getElementById('demo-modal').classList.remove('hidden');
+        }
+
+        function closeModal() {
+            document.getElementById('demo-modal').classList.add('hidden');
+        }
+    </script>
+</body>
+</html>
